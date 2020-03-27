@@ -84,7 +84,8 @@ end
 *__📄️ Note:__ Yes, it's awkward, but it should be that way due to a
 [bug in Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=349175).
 If they are not at the top, or at least mounted before they are used, Chrome
-will not render the icons.*
+will not render the icons. However, there are fixes, but they are beyond the
+scope of this shard.*
 
 This will mount the **default** icon set. Yes, that's right, you can create
 multiple icon sets. For example, you might need to have **symbolic** and 

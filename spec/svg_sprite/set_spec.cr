@@ -1,7 +1,7 @@
 require "../spec_helper"
 
 def test_svg_sprite_set
-  TestSvgSpriteSet.new
+  SvgSprite::BeautyAndTheBeast.new
 end
 
 describe SvgSprite::Set do
@@ -11,16 +11,22 @@ describe SvgSprite::Set do
     end
   end
 
-  describe "#id" do
+  describe "#class_name" do
     it "defines a set id" do
-      test_svg_sprite_set.id.should eq("svg-default-icon-sprite")
+      test_svg_sprite_set.class_name
+        .should eq("svg-sprite svg-beauty-and-the-beast-set")
+    end
+  end
+
+  describe "name" do
+    it "returns the name of the set" do
+      test_svg_sprite_set.name.should eq("beauty-and-the-beast")
     end
   end
 end
 
-class TestSvgSpriteSet
-  include SvgSprite::Set
-
-  def initialize(@name : String = "default")
+module SvgSprite
+  class BeautyAndTheBeast
+    include SvgSprite::Set
   end
 end

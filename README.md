@@ -45,7 +45,7 @@ This will generate a new sprite from the **default** set. Add the name of the
 set you want to generate:
 
 ```bash
-gen.svg_sprite menu
+gen.svg_sprite my_lovely_set
 ```
 
 By default, this command assumes your icons are in the desired color and you 
@@ -69,13 +69,13 @@ By using this flag, you will then be able to style your icons using CSS:
 
 *__📄️ Note:__ Obviously, this is not recommended for multicolor icons.*
 
-### Mounting the sprite
+### Mounting a sprite
 
 In your layout file, mount the sprite at the top of your body:
 
 ```crystal
 body do
-  mount Shared::SvgSprite.new
+  mount SvgSprite::Default.new
   ...
 end
 ```
@@ -91,10 +91,8 @@ multiple icon sets. For example, you might need to have **symbolic** and
 
 ```crystal
 body do
-  # mounts the "default" set
-  mount Shared::SvgSprite.new
-  # mounts the "other" set
-  mount Shared::SvgSprite.new("other")
+  mount SvgSprite::Default.new
+  mount SvgSprite::UnicornsAndRainbows.new
   ...
 end
 ```
@@ -102,7 +100,7 @@ end
 Evidently, icons for this set will go in:
 
 ```
-src/components/shared/svg_icons/other
+src/components/svg_icons/unicorns_and_rainbows
 ```
 
 __☝ Tip:__ If you have many icons in your app, sets can also be useful to
@@ -117,32 +115,26 @@ actually need a selection of them at the same time.
 Icons can be mounted wherever you like:
 
 ```crystal
-link to: Example::Show do
-  mount Shared::SvgIcon.new("example")
-  text "Example"
+link to: Profile::Show do
+  mount SvgSprite::Default::Icon.new("user-profile")
+  text "My Profile"
+end
+
+div class: "shopping-bag" do
+  mount Shared::MyLovelySet::Icon.new("products-shopping-bags")
 end
 ```
 
-Similar to sets, this will mount an icon from the **default** set, but another
-set can be defined as well:
-
-```crystal
-link to: Example::Show do
-  mount Shared::SvgIcon.new("example", set: "other")
-  text "Example"
-end
-```
-
-The first argument, which is the `name` of the icon, is directly
-derived from the file name. Some examples:
+The `Icon` initializer takes one argument, which is its `name`. It is a
+dasherized version of the original file name. Some examples:
 
 ```crystal
 # src/components/shared/svg_icons/default/hairy-ball.svg
-mount Shared::SvgIcon.new("hairy-ball")
-# src/components/shared/svg_icons/sidebar/aircraft_chopper_4.svg
-mount Shared::SvgIcon.new("aircraft_chopper_4", set: "sidebar")
-# src/components/shared/svg_icons/ThirdFooter/ContactUs.svg
-mount Shared::SvgIcon.new("ContactUs", set: "ThirdFooter")
+mount SvgSprite::Default::Icon.new("hairy-ball")
+# src/components/shared/svg_icons/default/aircraft_chopper_4.svg
+mount SvgSprite::Default::Icon.new("aircraft-chopper-4")
+# src/components/shared/svg_icons/my_lovely_set/ContactUs.svg
+mount SvgSprite::MyLovelySet::Icon.new("contact-us")
 ```
 
 ### Customizing attributes
@@ -152,22 +144,20 @@ mount Shared::SvgIcon.new("ContactUs", set: "ThirdFooter")
 Generated sprites are hidden with an inline style tag:
 
 ```html
-<svg class="svg-sprite svg-default-sprite" style="display:none" xmlns="http://www.w3.org/2000/svg">
+<svg class="svg-sprite svg-default-set" style="display:none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     ...
   </defs>
 </svg>
 ```
 
-If you are an puritan and believe style attributes have no place in HTML, then
-you are in luck. Just add a `style` method to your svg_sprite.cr component
+If you are a puritan and believe style attributes have no place in HTML, then
+you are in luck. Just add a `style` method to your base_svg_sprite.cr component
 returning an empty string:
 
 ```crystal
-# src/components/shared/svg_sprite.cr
-class Shared::SvgSprite < LuckySvgSprite::Base
-  include Shared::SvgIcons
-
+# src/components/base_svg_sprite.cr
+abstract class BaseSvgSprite < LuckySvgSprite::Set
   def style
     ""
   end
@@ -185,28 +175,26 @@ in your stylesheet:
 
 #### `class`
 
-Class names can be a very personal thing. By default, the sprites have two class
-names:
+Class names can be a very personal thing, so you might want to change them. By
+default, the sprites have two class names. For example:
 - `svg-sprite` (all sprites)
-- `svg-default-sprite` (this set alone)
+- `svg-default-set` (only the "default" set)
 
 Similarly, icons also have three class name:
 - `svg-icon` (all icons)
-- `svg-default-icon` (all icons in a given set)
-- `svg-default-example-icon` (a specific icon in a given set)
+- `svg-default-icon` (all icons in the "default" set)
+- `svg-default-example-icon` (the "example" icon in the "default" set)
 
-You can change them by adding a method called `svg_class` which returns the
+You can change them by adding a method called `class_name`, which returns the
 class name you prefer.
 
 **For sprites:**
 
 ```crystal
-# src/components/shared/svg_sprite.cr
-class Shared::SvgSprite < LuckySvgSprite::Set
-  include Shared::SvgIcons
-
-  def svg_class
-    "my-sprite my-#{@name}-sprite"
+# src/components/base_svg_sprite.cr
+abstract class BaseSvgSprite < LuckySvgSprite::Set
+  def class_name
+    "my-sprite my-#{name}-set"
   end
 end
 ```
@@ -214,7 +202,7 @@ end
 Which will result in:
 
 ```html
-<svg class="my-sprite my-default-sprite" style="display:none" xmlns="http://www.w3.org/2000/svg">
+<svg class="my-sprite my-default-set" style="display:none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     ...
   </defs>
@@ -224,9 +212,10 @@ Which will result in:
 **For icons:***
 
 ```crystal
-class Shared::SvgIcon < LuckySvgSprite::Icon
-  def svg_class
-    "my-icon my-#{@set}-icon my-#{@set}-#{@name}-icon"
+# src/components/base_svg_icon.cr
+abstract class BaseSvgIcon < LuckySvgSprite::Icon
+  def class_name
+    "my-icon my-#{set}-icon my-#{set}-#{name}-icon"
   end
 end
 ```

@@ -3,7 +3,11 @@ module SvgSprite::Set
     "display:none"
   end
 
-  def svg_class
-    "svg-sprite svg-#{@name}-sprite"
+  def class_name
+    "svg-sprite svg-#{name}-set"
+  end
+
+  def name
+    {{@type.id.split("::").last.underscore.gsub(/_/, "-")}}
   end
 end

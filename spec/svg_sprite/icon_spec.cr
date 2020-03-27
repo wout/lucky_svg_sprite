@@ -1,45 +1,34 @@
 require "../spec_helper"
 
-def test_svg_sprite_icon
-  TestSvgSpriteIcon.new("testable")
-end
-
-def test_svg_sprite_icon_with_set
-  TestSvgSpriteIcon.new("testable", set: "colored")
-end
-
 describe SvgSprite::Icon do
-  describe "#href" do
-    it "defines a default href" do
-      test_svg_sprite_icon.href
-        .should eq("#svg-default-testable-icon")
-    end
-
-    it "defines a href for a custom set" do
-      test_svg_sprite_icon_with_set.href
-        .should eq("#svg-colored-testable-icon")
-    end
-  end
-
-  describe "#svg_class" do
+  describe "#class_name" do
     it "defines a default svg element class" do
-      test_svg_sprite_icon.svg_class
-        .should eq("svg-default-icon svg-default-testable-icon")
+      SvgSpriteTest::Default::Icon.new("testable").class_name
+        .should eq("svg-icon svg-default-icon svg-default-testable-icon")
     end
 
     it "defines an svg element class for a custom set" do
-      test_svg_sprite_icon_with_set.svg_class
-        .should eq("svg-colored-icon svg-colored-testable-icon")
+      SvgSpriteTest::MyCustomSet::Icon.new("modified").class_name
+        .should eq("svg-icon svg-my-custom-set-icon svg-my-custom-set-modified-icon")
     end
   end
 end
 
-class TestSvgSpriteIcon
-  include SvgSprite::Icon
+module SvgSpriteTest
+  abstract class BaseTestIcon
+    def initialize(@name : String)
+    end
+  end
 
-  def initialize(
-    @name : String,
-    @set : String = "default"
-  )
+  class Default
+    class Icon < SvgSpriteTest::BaseTestIcon
+      include SvgSprite::Icon
+    end
+  end
+
+  class MyCustomSet
+    class Icon < SvgSpriteTest::BaseTestIcon
+      include SvgSprite::Icon
+    end
   end
 end

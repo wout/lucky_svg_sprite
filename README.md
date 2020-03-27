@@ -19,7 +19,7 @@ Run `shards install`.
 
 ## Setup
 
-At installation, this shard will install a few files in your app.
+At installation, this shard will generate a few files in your app.
 - `src/components/base_svg_icon.cr` (for customization)
 - `src/components/base_svg_sprite.cr` (for customization)
 - `src/components/svg_icons/default/example.svg` (example icon)
@@ -234,7 +234,18 @@ Which will result in:
 
 ## Development
 
-TODO: Write development instructions here
+Make sure you have [Guardian.cr](https://github.com/f/guardian) installed. Then
+run:
+
+```bash
+guardian
+```
+
+It will automatically:
+- run ameba for src and spec files
+- run the relevant spec for any file in src
+- run spec file whenever they are saved
+- install shards whenever you save shard.yml
 
 ## Contributing
 

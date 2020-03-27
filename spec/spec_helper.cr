@@ -1,5 +1,8 @@
 require "spec"
-require "../src/lucky_svg_sprite/mixins/icon.cr"
-require "../src/lucky_svg_sprite/mixins/set.cr"
-require "../src/lucky_svg_sprite/generator.cr"
-require "../src/lucky_svg_sprite/version.cr"
+require "lucky"
+require "./lucky_minimum_setup"
+require "../src/lucky_svg_sprite"
+require "../src/lucky_svg_sprite/mixins/**"
+require "../src/lucky_svg_sprite/**"
+
+# Habitat.raise_if_missing_settings!

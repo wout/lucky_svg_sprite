@@ -6,9 +6,9 @@ abstract class LuckySvgSprite::Set < Lucky::BaseComponent
   abstract def svg_icons
 
   def render
-    tag "svg", id: id, xmlns: "http://www.w3.org/2000/svg", style: style do
+    tag "svg", class: svg_class, style: style, xmlns: "http://www.w3.org/2000/svg" do
       tag "defs" do
-        svg_icons
+        svg_icons(@name)
       end
     end
   end

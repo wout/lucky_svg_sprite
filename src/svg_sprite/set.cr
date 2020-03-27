@@ -3,7 +3,7 @@ module SvgSprite::Set
     "display:none"
   end
 
-  def id
-    "svg-#{@name}-icon-sprite"
+  def svg_class
+    "svg-sprite svg-#{@name}-sprite"
   end
 end

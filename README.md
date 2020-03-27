@@ -1,6 +1,6 @@
 # Lucky SVG Sprite generator
 
-Generate a [Lucky](https://luckyframework.org/) flavored SVG sprite from a 
+Generate [Lucky](https://luckyframework.org/)-flavored SVG sprites from a 
 folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in your pages. Styling your icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
@@ -20,9 +20,10 @@ Run `shards install`.
 ## Setup
 
 At installation, this shard will install a few files in your app.
-- src/components/shared/svg_sprite.cr (for customization)
-- src/components/shared/svg_icons/default.cr (generated sprite)
-- src/components/shared/svg_icons/default/example.svg (example icon)
+- src/components/base_svg_icon.cr (for customization)
+- src/components/base_svg_sprite.cr (for customization)
+- src/components/svg_icons/default/example.svg (example icon)
+- src/components/svg_sprite/default.cr (generated sprite)
 - tasks/generate_svg_icon_sprite.cr (CLI task to generate sprites)
 
 ## Usage

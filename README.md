@@ -39,14 +39,14 @@ require "lucky_svg_sprite"
 You'll get a command to regenerate your icon sprite whenever icons are added:
 
 ```bash
-gen.svg_sprite
+lucky gen.svg_sprite
 ```
 
 This will generate a new sprite from the **default** set. Add the name of the
 set you want to generate:
 
 ```bash
-gen.svg_sprite my_lovely_set
+lucky gen.svg_sprite my_lovely_set
 ```
 
 By default, this command assumes your icons are in the desired color and you 
@@ -55,7 +55,7 @@ don't change their `stroke` or `fill` through CSS. By passing the
 removed:
 
 ```bash
-gen.svg_sprite --strip-color
+lucky gen.svg_sprite --strip-color
 ```
 
 By using this flag, you will then be able to style your icons using CSS:
@@ -72,7 +72,7 @@ By using this flag, you will then be able to style your icons using CSS:
 
 ### Mounting a sprite
 
-In your layout file, mount the sprite at the top of your body:
+In your layout file, mount the sprite at the top of the body tag:
 
 ```crystal
 body do
@@ -130,11 +130,11 @@ The `Icon` initializer takes one argument, which is its `name`. It is a
 dasherized version of the original file name. Some examples:
 
 ```crystal
-# src/components/shared/svg_icons/default/hairy-ball.svg
+# src/components/svg_icons/default/hairy-ball.svg
 mount SvgSprite::Default::Icon.new("hairy-ball")
-# src/components/shared/svg_icons/default/aircraft_chopper_4.svg
+# src/components/svg_icons/default/aircraft_chopper_4.svg
 mount SvgSprite::Default::Icon.new("aircraft-chopper-4")
-# src/components/shared/svg_icons/my_lovely_set/ContactUs.svg
+# src/components/svg_icons/my_lovely_set/ContactUs.svg
 mount SvgSprite::MyLovelySet::Icon.new("contact-us")
 ```
 

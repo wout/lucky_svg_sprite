@@ -20,11 +20,11 @@ Run `shards install`.
 ## Setup
 
 At installation, this shard will install a few files in your app.
-- src/components/base_svg_icon.cr (for customization)
-- src/components/base_svg_sprite.cr (for customization)
-- src/components/svg_icons/default/example.svg (example icon)
-- src/components/svg_sprite/default.cr (generated sprite)
-- tasks/generate_svg_icon_sprite.cr (CLI task to generate sprites)
+- `src/components/base_svg_icon.cr` (for customization)
+- `src/components/base_svg_sprite.cr` (for customization)
+- `src/components/svg_icons/default/example.svg` (example icon)
+- `src/components/svg_sprite/default.cr` (generated sprite)
+- `tasks/generate_svg_icon_sprite.cr` (CLI task to generate sprites)
 
 ## Usage
 
@@ -133,8 +133,10 @@ dasherized version of the original file name. Some examples:
 ```crystal
 # src/components/svg_icons/default/hairy-ball.svg
 mount SvgSprite::Default::Icon.new("hairy-ball")
+
 # src/components/svg_icons/default/aircraft_chopper_4.svg
 mount SvgSprite::Default::Icon.new("aircraft-chopper-4")
+
 # src/components/svg_icons/my_lovely_set/ContactUs.svg
 mount SvgSprite::MyLovelySet::Icon.new("contact-us")
 ```
@@ -154,8 +156,8 @@ Generated sprites are hidden with an inline style tag:
 ```
 
 If you are a puritan and believe style attributes have no place in HTML, then
-you are in luck. Just add a `style` method to your base_svg_sprite.cr component
-returning an empty string:
+you are in luck. Just add a `style` method to your `base_svg_sprite.cr`
+component returning an empty string:
 
 ```crystal
 # src/components/base_svg_sprite.cr

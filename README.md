@@ -177,14 +177,14 @@ in your stylesheet:
 #### `class`
 
 Class names can be a very personal thing, so you might want to change them. By
-default, the sprites have two class names. For example:
+default, sprites have two class names. For example:
 - `svg-sprite` (all sprites)
-- `svg-default-set` (only the "default" set)
+- `svg-default-set` (only the **default** set)
 
 Similarly, icons also have three class name:
 - `svg-icon` (all icons)
-- `svg-default-icon` (all icons in the "default" set)
-- `svg-default-example-icon` (the "example" icon in the "default" set)
+- `svg-default-icon` (all icons in the **default** set)
+- `svg-default-example-icon` (the **example** icon in the **default** set)
 
 You can change them by adding a method called `class_name`, which returns the
 class name you prefer over the default one.
@@ -210,7 +210,7 @@ Which will result in:
 </svg>
 ```
 
-**For icons:***
+**For icons:**
 
 ```crystal
 # src/components/base_svg_icon.cr
@@ -225,7 +225,7 @@ Which will result in:
 
 ```html
 <svg class="my-icon my-default-icon my-default-example-icon">
-  <use xlink:href="#svg-example-icon"></use>
+  <use xlink:href="#svg-default-example-icon"></use>
 </svg>
 ```
 

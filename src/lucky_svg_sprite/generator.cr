@@ -1,4 +1,4 @@
-class SvgSprite::Generator
+class LuckySvgSprite::Generator
   def initialize(@path : String)
   end
 

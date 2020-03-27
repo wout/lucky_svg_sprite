@@ -1,4 +1,4 @@
-module SvgSprite::Set
+module LuckySvgSprite::Mixins::Set
   def style
     "display:none"
   end

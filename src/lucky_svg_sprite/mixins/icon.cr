@@ -1,4 +1,4 @@
-module SvgSprite::Icon
+module LuckySvgSprite::Mixins::Icon
   macro included
     getter name : String
   end

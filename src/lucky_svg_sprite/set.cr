@@ -1,10 +1,10 @@
 abstract class LuckySvgSprite::Set < Lucky::BaseComponent
-  include SvgSprite::Set
+  include LuckySvgSprite::Mixins::Set
 
   abstract def render_icons : IO
 
   def render
-    tag "svg", class: svg_class, style: style, xmlns: "http://www.w3.org/2000/svg" do
+    tag "svg", class: class_name, style: style, xmlns: "http://www.w3.org/2000/svg" do
       tag "defs" do
         render_icons
       end

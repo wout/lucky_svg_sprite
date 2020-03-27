@@ -1,10 +1,10 @@
-require "../spec_helper"
+require "../../spec_helper"
 
 def test_svg_sprite_set
-  SvgSprite::BeautyAndTheBeast.new
+  LuckySvgSprite::BeautyAndTheBeast.new
 end
 
-describe SvgSprite::Set do
+describe LuckySvgSprite::Mixins::Set do
   describe "#style" do
     it "hides the element" do
       test_svg_sprite_set.style.should eq("display:none")
@@ -25,8 +25,8 @@ describe SvgSprite::Set do
   end
 end
 
-module SvgSprite
+module LuckySvgSprite
   class BeautyAndTheBeast
-    include SvgSprite::Set
+    include LuckySvgSprite::Mixins::Set
   end
 end

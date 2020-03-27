@@ -1,34 +1,34 @@
-require "../spec_helper"
+require "../../spec_helper"
 
-describe SvgSprite::Icon do
+describe LuckySvgSprite::Mixins::Icon do
   describe "#class_name" do
     it "defines a default svg element class" do
-      SvgSpriteTest::Default::Icon.new("testable").class_name
+      LuckySvgSpriteTest::Default::Icon.new("testable").class_name
         .should eq("svg-icon svg-default-icon svg-default-testable-icon")
     end
 
     it "defines an svg element class for a custom set" do
-      SvgSpriteTest::MyCustomSet::Icon.new("modified").class_name
+      LuckySvgSpriteTest::MyCustomSet::Icon.new("modified").class_name
         .should eq("svg-icon svg-my-custom-set-icon svg-my-custom-set-modified-icon")
     end
   end
 end
 
-module SvgSpriteTest
+module LuckySvgSpriteTest
   abstract class BaseTestIcon
     def initialize(@name : String)
     end
   end
 
   class Default
-    class Icon < SvgSpriteTest::BaseTestIcon
-      include SvgSprite::Icon
+    class Icon < LuckySvgSpriteTest::BaseTestIcon
+      include LuckySvgSprite::Mixins::Icon
     end
   end
 
   class MyCustomSet
-    class Icon < SvgSpriteTest::BaseTestIcon
-      include SvgSprite::Icon
+    class Icon < LuckySvgSpriteTest::BaseTestIcon
+      include LuckySvgSprite::Mixins::Icon
     end
   end
 end

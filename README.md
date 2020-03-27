@@ -186,7 +186,7 @@ Similarly, icons also have three class name:
 - `svg-default-example-icon` (the "example" icon in the "default" set)
 
 You can change them by adding a method called `class_name`, which returns the
-class name you prefer.
+class name you prefer over the default one.
 
 **For sprites:**
 

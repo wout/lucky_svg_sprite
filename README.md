@@ -81,7 +81,7 @@ body do
 end
 ```
 
-*__📄️ Note:__ This might seem awkward, but it should be that way due to a
+*__📄️ Note:__ Yes, it's awkward, but it should be that way due to a
 [bug in Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=349175).
 If they are not at the top, or at least mounted before they are used, Chrome
 will not render the icons.*

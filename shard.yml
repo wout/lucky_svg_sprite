@@ -4,6 +4,10 @@ version: 0.1.0
 authors:
   - wout <wout@mick-wout.com>
 
+dependencies:
+  myhtml:
+    github: kostya/myhtml
+
 development_dependencies:
   spec_mirror:
     github: tilishop/spec_mirror.cr

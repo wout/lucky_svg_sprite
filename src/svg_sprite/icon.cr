@@ -1,13 +1,9 @@
 module SvgSprite::Icon
   def href
-    "#svg-#{@name}-icon"
+    "#svg-#{@set}-#{@name}-icon"
   end
 
   def svg_class
-    "svg-icon svg-#{@name}-icon"
-  end
-
-  def use_class
-    ""
+    "svg-#{@set}-icon svg-#{@set}-#{@name}-icon"
   end
 end

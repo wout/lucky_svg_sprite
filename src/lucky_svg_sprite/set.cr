@@ -1,5 +1,7 @@
-abstract class LuckySvgSprite::Base < Lucky::BaseComponent
-  include SvgSprite::Base
+abstract class LuckySvgSprite::Set < Lucky::BaseComponent
+  include SvgSprite::Set
+
+  needs name : String = "default"
 
   abstract def svg_icons
 

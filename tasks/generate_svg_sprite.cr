@@ -1,6 +1,6 @@
-class GenerateSvgIconSprite < LuckyCli::Task
+class GenerateSvgSprite < LuckyCli::Task
   summary "Generates a SVG sprite from the available icons"
-  name "gen.svg_icon_sprite"
+  name "gen.svg_sprite"
 
   def call
     number = 0

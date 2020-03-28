@@ -26,18 +26,22 @@ describe LuckySvgSprite::Generator do
     end
   end
 
-  describe "#namespace" do
-    it "generates a namespace from the icon dir" do
+  describe "#sprite_name" do
+    it "generates a sprite name from the icon dir" do
       generator = LuckySvgSprite::Generator.new("./icons/my_set")
-      generator.namespace.should eq("MySet")
+      generator.sprite_name.should eq("MySet")
       generator = LuckySvgSprite::Generator.new("./icons/my_sweet_set/")
-      generator.namespace.should eq("MySweetSet")
+      generator.sprite_name.should eq("MySweetSet")
       generator = LuckySvgSprite::Generator.new("./icons/my-other-set")
-      generator.namespace.should eq("MyOtherSet")
+      generator.sprite_name.should eq("MyOtherSet")
       generator = LuckySvgSprite::Generator.new("./icons/Yet Another Set")
-      generator.namespace.should eq("YetAnotherSet")
+      generator.sprite_name.should eq("YetAnotherSet")
       generator = LuckySvgSprite::Generator.new("./icons/123--Flup.svg")
-      generator.namespace.should eq("FlupSvg")
+      generator.sprite_name.should eq("FlupSvg")
+      generator = LuckySvgSprite::Generator.new("./icons/-webkit-set-")
+      generator.sprite_name.should eq("WebkitSet")
+      generator = LuckySvgSprite::Generator.new("./icons/MESSY__MESSY")
+      generator.sprite_name.should eq("MessyMessy")
     end
   end
 

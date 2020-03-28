@@ -12,11 +12,13 @@ class LuckySvgSprite::Generator
     end.join("\n").strip
   end
 
-  def namespace
+  def sprite_name
     @path.strip
       .gsub(/\/$/, "")
       .split('/').last
+      .underscore
       .gsub(/[\.\-\s]+/, "_")
+      .gsub(/^_|_$/, "")
       .camelcase
       .gsub(/^\d+/, "")
   end
@@ -24,7 +26,7 @@ class LuckySvgSprite::Generator
   def generate(format : Format)
     format.indent = 4
     <<-CODE
-    class SvgSprite::#{namespace} < BaseSvgSprite
+    class SvgSprite::#{sprite_name} < BaseSvgSprite
       def render_icons : IO
         #{concatenate(format)}
       end

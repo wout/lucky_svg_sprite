@@ -2,7 +2,7 @@
 
 Generate [Lucky](https://luckyframework.org/)-flavored SVG sprites from a 
 folder of separate SVG icons. This shard includes the necessary Lucky components
-to mount sprites and icons in your pages. Styling your icons, like `width`, 
+to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
 ## Installation
@@ -84,7 +84,7 @@ end
 *__📄️ Note:__ Yes, it's awkward, but it should be that way due to a
 [bug in Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=349175).
 If they are not at the top, or at least mounted before they are used, Chrome
-will not render the icons. However, there are fixes, but they are beyond the
+will not render the icons. There are fixes, but they are beyond the
 scope of this shard.*
 
 This will mount the **default** icon set. Yes, that's right, you can create
@@ -99,7 +99,7 @@ body do
 end
 ```
 
-Evidently, icons for this set will go in:
+Evidently, icons for the second set should be stored in:
 
 ```
 src/components/svg_icons/unicorns_and_rainbows
@@ -123,7 +123,7 @@ link to: Profile::Show do
 end
 
 div class: "shopping-bag" do
-  mount Shared::MyLovelySet::Icon.new("products-shopping-bags")
+  mount SvgSprite::MyLovelySet::Icon.new("products-shopping-bags")
 end
 ```
 
@@ -184,7 +184,7 @@ default, sprites have two class names. For example:
 - `svg-sprite` (all sprites)
 - `svg-default-set` (only the **default** set)
 
-Similarly, icons also have three class name:
+Similarly, icons also have three class names:
 - `svg-icon` (all icons)
 - `svg-default-icon` (all icons in the **default** set)
 - `svg-default-example-icon` (the **example** icon in the **default** set)

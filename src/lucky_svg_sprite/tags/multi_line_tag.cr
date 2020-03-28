@@ -17,7 +17,7 @@ class LuckySvgSprite::MultiLineTag < LuckySvgSprite::Tag
     if children?
       io << BLOCK_START
       tag.children.each do |child_tag|
-        TagFactory.new(child_tag, depth + 1, colorless).build.print_io(io)
+        TagFactory.new(child_tag, depth + 1, format).build.print_io(io)
       end
       io << padding + BLOCK_END
     end

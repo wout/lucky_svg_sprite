@@ -3,23 +3,23 @@ abstract class LuckySvgSprite::Tag
   NAMED_TAGS = Lucky::BaseTags::TAGS +
                Lucky::BaseTags::EMPTY_TAGS +
                Lucky::BaseTags::RENAMED_TAGS.values.to_a
-  ATTR_TO_AVOID       = %w[class style]
+  ATTR_TO_AVOID       = %w[class id style]
   TOP_ATTR_TO_AVOID   = %w[height width]
   COLOR_ATTR_TO_AVOID = %w[fill stroke]
 
-  getter depth, tag, colorless
+  getter depth, tag, format
 
   def initialize(
     @tag : Myhtml::Node,
     @depth : Int32,
-    @colorless : Bool = false
+    @format : Format
   )
   end
 
   abstract def print_io(io : IO) : IO
 
   def padding
-    " " * (depth * 2)
+    " " * (depth * 2 + @format.indent)
   end
 
   def method_name
@@ -49,7 +49,9 @@ abstract class LuckySvgSprite::Tag
   end
 
   def attr_parameters
-    convert_attributes_to_parameters.compact.sort_by do |string|
+    params = convert_attributes_to_parameters
+    params.push(%(id: "#{format.id_param}")) if format.id_param && depth == 0
+    params.compact.sort_by do |string|
       string.gsub(/\"/, "")
     end
   end
@@ -62,17 +64,16 @@ abstract class LuckySvgSprite::Tag
     tag.attributes.map do |key, value|
       if attribute_allowed?(key)
         if lucky_can_handle_as_symbol?(key)
-          "#{key.tr("-", "_")}: \"#{value}\""
+          %(#{key.tr("-", "_")}: "#{value}")
         else
-          "#{wrap_quotes(key)}: \"#{value}\""
+          %(#{wrap_quotes(key)}: "#{value}")
         end
       end
     end
   end
 
   private def attribute_allowed?(key)
-    avoid = ATTR_TO_AVOID
-    avoid += COLOR_ATTR_TO_AVOID if @colorless
+    avoid = ATTR_TO_AVOID + (format.colorless ? COLOR_ATTR_TO_AVOID : %w[])
     !avoid.includes?(key) && (depth > 0 || !TOP_ATTR_TO_AVOID.includes?(key))
   end
 

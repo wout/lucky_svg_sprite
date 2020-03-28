@@ -1,17 +1,17 @@
 class LuckySvgSprite::TagFactory
   TEXT_TAG_NAME = "-text"
 
-  getter depth, tag, colorless
+  getter depth, tag, format
 
   def initialize(
     @tag : Myhtml::Node,
     @depth : Int32,
-    @colorless : Bool = false
+    @format : Format
   )
   end
 
   def build : Tag
-    tag_class.new(tag, depth, colorless)
+    tag_class.new(tag, depth, format)
   end
 
   private def tag_class : Tag.class

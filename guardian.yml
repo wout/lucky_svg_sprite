@@ -1,8 +1,8 @@
 files: ./spec/**/*.cr
-run: bin/ameba
+run: bin/ameba %file%
 ---
 files: ./src/**/*.cr
-run: bin/ameba
+run: bin/ameba %file%
 ---
 files: ./spec/**/*_spec.cr
 run: bin/spec_mirror %file%

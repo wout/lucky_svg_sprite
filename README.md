@@ -24,7 +24,7 @@ At installation, this shard will generate a few files in your app.
 - `src/components/base_svg_sprite.cr` (for customization)
 - `src/components/svg_icons/default/example.svg` (example icon)
 - `src/components/svg_sprite/default.cr` (generated sprite)
-- `tasks/generate_svg_icon_sprite.cr` (CLI task to generate sprites)
+- `tasks/generate_svg_sprite.cr` (CLI task to generate sprites)
 
 ## Usage
 
@@ -241,7 +241,7 @@ run:
 guardian
 ```
 
-It will automatically:
+This will automatically:
 - run ameba for src and spec files
 - run the relevant spec for any file in src
 - run spec file whenever they are saved
@@ -259,3 +259,7 @@ It will automatically:
 
 - [wout](https://github.com/wout) - creator and maintainer
 - [tilishop](https://github.com/tilishop) - owner and maintainer
+
+## Thanks & attributions
+- The SVG to Lucky component converter is heavily based on
+[HTML2Lucky](https://luckyhtml.herokuapp.com/). Thanks @paulcsmith! 

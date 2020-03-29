@@ -17,7 +17,7 @@ Add the dependency to your `shard.yml`:
 ```yaml
 dependencies:
   lucky_svg_sprite:
-    github: tilishop/lucky_svg_sprite
+    github: tilishop/lucky_svg_sprite.cr
 ```
 
 Run `shards install`.

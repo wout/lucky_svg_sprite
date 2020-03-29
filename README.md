@@ -33,12 +33,11 @@ After installation, run the following command:
 lucky gen.svg_sprite --init
 ```
 
-This will generate the required structure:
+This will set up the required structure and files:
 
 - `src/components/base_svg_icon.cr` (for customization)
 - `src/components/base_svg_sprite.cr` (for customization)
 - `src/components/svg_icons/default/example.svg` (example icon)
-- `tasks/generate_svg_sprite.cr` (CLI task to generate sprites)
 
 You can add a set name as well:
 

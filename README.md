@@ -23,7 +23,8 @@ dependencies:
 Run `shards install`.
 
 __📄️ Note:__ *Installation might take a while since the generator binary needs
-to be built. Be patient.*
+to be built. Having it built now, means that you'll have instantaneous sprite
+regeneration. So, don't worry, be patient and grab a ☕️.*
 
 ## Usage
 
@@ -126,7 +127,7 @@ your sets.
 
 __📄️ Note:__ *This setup works well with Lucky's watcher, because when the new
 sprite file is generated, Lucky will pick up on that and start recompiling the
-app.*
+app. An added bonus of using Crystal. 🎉️*
 
 ### Mounting a sprite
 
@@ -199,6 +200,11 @@ mount SvgSprite::Default::AircraftChopper4.new
 # src/components/svg_icons/my_lovely_set/ContactUs.svg
 mount SvgSprite::MyLovelySet::ContactUs.new
 ```
+
+__📄️ Note:__ *The great thing about having dedicated Crystal classes per icon, 
+is that you'll never have a missing icon. And if an SVG icon source file gets
+deleted or renamed, the compiler will let you know after regenerating the
+sprite.*
 
 ### Customizing attributes
 

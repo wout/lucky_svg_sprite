@@ -1,5 +1,7 @@
 # Lucky SVG Sprite generator
 
+![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/tilishop/lucky_svg_sprite.cr/master/templates/example.svg)
+
 Generate [Lucky](https://luckyframework.org/)-flavored SVG sprites from a 
 folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 

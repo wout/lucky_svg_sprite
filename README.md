@@ -187,7 +187,7 @@ div class: "shopping-bag" do
 end
 ```
 
-The name of the icon class is the classified version of it file name. Here are
+The name of the icon class is the classified version of its file name. Here are
 some examples:
 
 ```crystal
@@ -202,7 +202,7 @@ mount SvgSprite::MyLovelySet::ContactUs.new
 ```
 
 __📄️ Note:__ *The great thing about having dedicated Crystal classes per icon, 
-is that you'll never have a missing icon. And if an SVG icon source file gets
+is that you'll never have a missing icon. And if an SVG icon's source file gets
 deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.* 🎉️
 

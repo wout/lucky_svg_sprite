@@ -52,8 +52,7 @@ Which will generate a directory for the given set name instead of **default**:
 
 ### Generating sprites
 
-To regenerate your icon sprites whenever icons are added, use the following
-command:
+To regenerate your sprite after adding new icons, run:
 
 ```bash
 lucky gen.svg_sprite

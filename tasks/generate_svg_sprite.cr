@@ -3,8 +3,8 @@ require "lucky_cli"
 require "teeplate"
 require "colorize"
 require "file_utils"
-require "lucky_svg_sprite"
 require "option_parser"
+require "../src/lucky_svg_sprite"
 
 class GenerateSvgSprite < LuckyCli::Task
   summary "Generates a SVG sprite from the available icons for a given set"

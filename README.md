@@ -187,8 +187,8 @@ mount SvgSprite::MyLovelySet::Icon.new("contact-us")
 ```
 
 *__📄️ Note:__ This file name transformation is done to ensure valid id
-references throughout. But many icon sets use lower case, dasherized file names.
-So that is not something to worry about in most cases.*
+references throughout. But many icon sets use lower case, dasherized file names,
+so it's not something to worry about in most cases.*
 
 ### Customizing attributes
 

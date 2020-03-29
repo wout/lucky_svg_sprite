@@ -157,8 +157,9 @@ to mount sprites and icons in pages. Styling icons, like <code>width</code>,
 
 <p>Run <code>shards install</code>.</p>
 
-<p><em>__📄️ Note:__ Installation might take a while since the generator binary needs
-to be built. Be patient.</em></p>
+<p><strong>📄️ Note:</strong> <em>Installation might take a while since the generator binary needs
+to be built. Having it built now, means that you'll have instantaneous sprite
+regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
@@ -222,7 +223,7 @@ removed:</p>
   fill: none;
 }</code></pre>
 
-<p><em>__📄️ Note:__ Obviously, this is not recommended for multicolor icons.</em></p>
+<p><strong>📄️ Note:</strong> <em>Obviously, this is not recommended for multicolor icons.</em></p>
 
 <h3><a id="automatically-generating-sprites" class="anchor" href="#automatically-generating-sprites">
   <svg class="octicon-link" aria-hidden="true">
@@ -251,6 +252,10 @@ run: lucky gen.svg_sprite symbolic --strip-colors</code></pre>
 <p>And watch your sprites be generated whenever you edit or add an icon to one of
 your sets.</p>
 
+<p><strong>📄️ Note:</strong> <em>This setup works well with Lucky's watcher, because when the new
+sprite file is generated, Lucky will pick up on that and start recompiling the
+app.</em></p>
+
 <h3><a id="mounting-a-sprite" class="anchor" href="#mounting-a-sprite">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -264,7 +269,7 @@ your sets.</p>
   ...
 <span class="k">end</span></code></pre>
 
-<p><em>__📄️ Note:__ Yes, it's awkward, but it should be that way due to a
+<p><strong>📄️ Note:</strong> <em>Yes, it's awkward, but it should be that way due to a
 <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=349175" target="_blank">bug in Chrome</a>.
 If they are not at the top, or at least mounted before they are used, Chrome
 will not render the icons. There are fixes, but they are beyond the
@@ -320,6 +325,11 @@ mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">D
 
 <span class="c"># src/components/svg_icons/my_lovely_set/ContactUs.svg</span>
 mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">MyLovelySet</span><span class="t">::</span><span class="t">ContactUs</span>.<span class="k">new</span></code></pre>
+
+<p><strong>📄️ Note:</strong> <em>The great thing about having dedicated Crystal classes per icon, 
+is that you'll never have a missing icon. And if an SVG icon source file gets
+deleted or renamed, the compiler will let you know after regenerating the
+sprite. An added bonus of using Crystal.</em> 🎉️</p>
 
 <h3><a id="customizing-attributes" class="anchor" href="#customizing-attributes">
   <svg class="octicon-link" aria-hidden="true">
@@ -424,6 +434,14 @@ run:</p>
 
 <ul><li>run ameba for src and spec files</li><li>run the relevant spec for any file in src</li><li>run spec file whenever they are saved</li><li>install shards whenever you save shard.yml</li></ul>
 
+<h2><a id="documentation" class="anchor" href="#documentation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Documentation</h2>
+
+<ul><li><a href="https://tilishop.github.io/lucky_svg_sprite.cr" target="_blank">API (master)</a></li></ul>
+
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -447,7 +465,8 @@ run:</p>
 </a>Thanks & attributions</h2>
 
 <ul><li>The SVG to Lucky component converter is heavily based on
-<a href="https://luckyhtml.herokuapp.com/" target="_blank">HTML2Lucky</a>. Thanks @paulcsmith! </li></ul>
+<a href="https://luckyhtml.herokuapp.com/" target="_blank">HTML2Lucky</a>.
+Thanks <a href="https://github.com/paulcsmith" target="_blank">@paulcsmith</a>! </li></ul>
 </div>
 </body>
 </html>

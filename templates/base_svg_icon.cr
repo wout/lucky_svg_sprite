@@ -2,5 +2,4 @@
 # More information available here:
 # https://github.com/tilishop/lucky_svg_sprite.cr#customizing-attributes
 abstract class BaseSvgIcon < LuckySvgSprite::Icon
-  needs name : String
 end

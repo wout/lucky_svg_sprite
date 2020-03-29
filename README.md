@@ -17,15 +17,6 @@ dependencies:
 
 Run `shards install`.
 
-## Setup
-
-At installation, this shard will generate a few files in your app.
-- `src/components/base_svg_icon.cr` (for customization)
-- `src/components/base_svg_sprite.cr` (for customization)
-- `src/components/svg_icons/default/example.svg` (example icon)
-- `src/components/svg_sprite/default.cr` (generated sprite)
-- `tasks/generate_svg_sprite.cr` (CLI task to generate sprites)
-
 ## Usage
 
 First, make sure your require this library in Lucky's shards.cr file:
@@ -34,9 +25,35 @@ First, make sure your require this library in Lucky's shards.cr file:
 require "lucky_svg_sprite"
 ```
 
+### Setup
+
+After installation, run the following command:
+
+```bash
+lucky gen.svg_sprite --init
+```
+
+This will generate the required structure:
+
+- `src/components/base_svg_icon.cr` (for customization)
+- `src/components/base_svg_sprite.cr` (for customization)
+- `src/components/svg_icons/default/example.svg` (example icon)
+- `tasks/generate_svg_sprite.cr` (CLI task to generate sprites)
+
+You can add a set name as well:
+
+```bash
+lucky gen.svg_sprite menu_symbolic --init
+```
+
+Which will generate a directory for the given set name instead of **default**: 
+
+- `src/components/svg_icons/menu_symbolic/example.svg` (example icon)
+
 ### Generating sprites
 
-You'll get a command to regenerate your icon sprite whenever icons are added:
+To regenerate your icon sprites whenever icons are added, use the following
+command:
 
 ```bash
 lucky gen.svg_sprite
@@ -55,7 +72,7 @@ don't change their `stroke` or `fill` through CSS. By passing the
 removed:
 
 ```bash
-lucky gen.svg_sprite --strip-color
+lucky gen.svg_sprite --strip-colors
 ```
 
 By using this flag, you will then be able to style your icons using CSS:
@@ -69,6 +86,15 @@ By using this flag, you will then be able to style your icons using CSS:
 ```
 
 *__📄️ Note:__ Obviously, this is not recommended for multicolor icons.*
+
+### Automatically generating sprites
+
+files: ./src/components/svg_icons/default/*.svg
+run: lucky gen.svg_sprite --strip-colors
+---
+files: ./src/components/svg_icons/fab/*.svg
+run: lucky gen.svg_sprite fab --strip-colors
+
 
 ### Mounting a sprite
 

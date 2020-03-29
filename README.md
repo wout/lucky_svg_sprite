@@ -45,8 +45,9 @@ This will set up the required structure and files:
 
 - `src/components/base_svg_icon.cr` (for customization)
 - `src/components/base_svg_sprite.cr` (for customization)
-- `src/components/svg_icons/default/example.svg` (example icon)
+- `src/components/svg_icons/default/example.svg` (`example` icon)
 - `src/components/svg_sprites` (where generated sprites will be stored)
+- `src/components/svg_sprites/default.cr` (sprite component with `example` icon)
 
 You can add a set name as well:
 
@@ -56,7 +57,7 @@ lucky gen.svg_sprite menu_symbolic --init
 
 Which will generate a directory for the given set name instead of **default**: 
 
-- `src/components/svg_icons/menu_symbolic/example.svg` (example icon)
+- `src/components/svg_icons/menu_symbolic/example.svg` (`example` icon)
 
 ### Generating sprites
 

@@ -127,7 +127,7 @@ your sets.
 
 __📄️ Note:__ *This setup works well with Lucky's watcher, because when the new
 sprite file is generated, Lucky will pick up on that and start recompiling the
-app. An added bonus of using Crystal. 🎉️*
+app.*
 
 ### Mounting a sprite
 
@@ -204,7 +204,7 @@ mount SvgSprite::MyLovelySet::ContactUs.new
 __📄️ Note:__ *The great thing about having dedicated Crystal classes per icon, 
 is that you'll never have a missing icon. And if an SVG icon source file gets
 deleted or renamed, the compiler will let you know after regenerating the
-sprite.*
+sprite. An added bonus of using Crystal.* 🎉️
 
 ### Customizing attributes
 

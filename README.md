@@ -89,7 +89,7 @@ By using this flag, you will then be able to style your icons using CSS:
 ### Automatically generating sprites 🚀️
 
 If you have [Guardian.cr](https://github.com/f/guardian) installed, create a
-`guardfile.yml` (`guardian --init`) adn add the following line:
+`guardfile.yml` (`guardian --init`) and add the following line:
 
 ```yaml
 files: ./src/components/svg_icons/default/*.svg
@@ -105,6 +105,15 @@ run: lucky gen.svg_sprite
 files: ./src/components/svg_icons/symbolic/*.svg
 run: lucky gen.svg_sprite symbolic --strip-colors
 ```
+
+Then, in a new terminal window, simply run:
+
+```
+guardian
+```
+
+And watch your sprites be generated whenever you edit or add an icon to one of
+your sets.
 
 ### Mounting a sprite
 

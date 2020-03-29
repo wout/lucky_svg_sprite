@@ -36,8 +36,10 @@ describe LuckySvgSprite::Generator do
       generator.sprite_name.should eq("MyOtherSet")
       generator = LuckySvgSprite::Generator.new("./icons/Yet Another Set")
       generator.sprite_name.should eq("YetAnotherSet")
-      generator = LuckySvgSprite::Generator.new("./icons/123--Flup.svg")
-      generator.sprite_name.should eq("FlupSvg")
+      generator = LuckySvgSprite::Generator.new("./icons/123--Flup.extended")
+      generator.sprite_name.should eq("FlupExtended")
+      generator = LuckySvgSprite::Generator.new("./icons/123--Flap.svg")
+      generator.sprite_name.should eq("Flap")
       generator = LuckySvgSprite::Generator.new("./icons/-webkit-set-")
       generator.sprite_name.should eq("WebkitSet")
       generator = LuckySvgSprite::Generator.new("./icons/MESSY__MESSY")
@@ -74,8 +76,11 @@ describe LuckySvgSprite::Generator do
           end
         end
 
-        class Icon < BaseSvgIcon
-        end
+        class Activity < BaseSvgIcon; end
+        class Command < BaseSvgIcon; end
+        class Github < BaseSvgIcon; end
+        class Wind < BaseSvgIcon; end
+        class Zap < BaseSvgIcon; end
       end
       CODE
 
@@ -112,8 +117,11 @@ describe LuckySvgSprite::Generator do
           end
         end
 
-        class Icon < BaseSvgIcon
-        end
+        class Activity < BaseSvgIcon; end
+        class Command < BaseSvgIcon; end
+        class Github < BaseSvgIcon; end
+        class Wind < BaseSvgIcon; end
+        class Zap < BaseSvgIcon; end
       end
       CODE
 

@@ -147,16 +147,17 @@ multiple icon sets. For example, you might need to have **symbolic** and
 
 ```crystal
 body do
-  mount SvgSprite::Symbolic.new
   mount SvgSprite::Colored.new
+  mount SvgSprite::Symbolic.new
   ...
 end
 ```
 
-Evidently, icons for the second set should be stored in:
+Evidently, icons for the respective sets sould be stored in:
 
 ```
-src/components/svg_icons/unicorns_and_rainbows
+src/components/svg_icons/colored
+src/components/svg_icons/symbolic
 ```
 
 __☝ Tip:__ If you have many icons in your app, sets can also be useful to
@@ -172,32 +173,28 @@ Icons can be mounted wherever you like:
 
 ```crystal
 link to: Profile::Show do
-  mount SvgSprite::Default::Icon.new("user-profile")
+  mount SvgSprite::Default::UserProfile.new
   text "My Profile"
 end
 
 div class: "shopping-bag" do
-  mount SvgSprite::MyLovelySet::Icon.new("products-shopping-bags")
+  mount SvgSprite::MyLovelySet::ProductsShoppingBags.new
 end
 ```
 
-The `Icon` initializer takes one argument, which is its `name`. It is a
-dasherized version of the original file name. Some examples:
+The name of the icon class is the classified version of it file name. Here are
+some examples:
 
 ```crystal
 # src/components/svg_icons/default/hairy-ball.svg
-mount SvgSprite::Default::Icon.new("hairy-ball")
+mount SvgSprite::Default::HairyBall.new
 
 # src/components/svg_icons/default/aircraft_chopper_4.svg
-mount SvgSprite::Default::Icon.new("aircraft-chopper-4")
+mount SvgSprite::Default::AircraftChopper4.new
 
 # src/components/svg_icons/my_lovely_set/ContactUs.svg
-mount SvgSprite::MyLovelySet::Icon.new("contact-us")
+mount SvgSprite::MyLovelySet::ContactUs.new
 ```
-
-*__📄️ Note:__ This file name transformation is done to ensure valid id
-references throughout. But many icon sets use lower case, dasherized file names,
-so it's not something to worry about in most cases.*
 
 ### Customizing attributes
 

@@ -1,13 +1,17 @@
 module LuckySvgSprite::Mixins::Icon
-  macro included
-    getter name : String
-  end
-
   def class_name
     "svg-icon svg-#{set}-icon svg-#{set}-#{name}-icon"
   end
 
+  def name
+    name_part(-1)
+  end
+
   def set
-    {{@type.id.split("::")[-2].underscore.gsub(/_/, "-")}}
+    name_part(-2)
+  end
+
+  private def name_part(offset : Int32)
+    {{@type.id.split("::")}}[offset].underscore.gsub(/_/, "-")
   end
 end

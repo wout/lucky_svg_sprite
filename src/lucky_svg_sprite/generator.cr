@@ -1,9 +1,8 @@
 class LuckySvgSprite::Generator
-  def initialize(@path : String)
-  end
+  getter icons : Array(String)
 
-  def icons
-    Dir.glob("#{@path}/*.svg").sort
+  def initialize(@path : String)
+    @icons = Dir.glob("#{@path}/*.svg").sort
   end
 
   def concatenate(format : Format)
@@ -12,15 +11,14 @@ class LuckySvgSprite::Generator
     end.join("\n").strip
   end
 
+  def icon_classes
+    icons.map do |icon|
+      "class #{classify_from_path(icon)} < BaseSvgIcon; end"
+    end
+  end
+
   def sprite_name
-    @path.strip
-      .gsub(/\/$/, "")
-      .split('/').last
-      .underscore
-      .gsub(/[\.\-\s]+/, "_")
-      .gsub(/^_|_$/, "")
-      .camelcase
-      .gsub(/^\d+/, "")
+    classify_from_path(@path)
   end
 
   def generate(format : Format)
@@ -34,9 +32,20 @@ class LuckySvgSprite::Generator
         #{concatenate(format)}
       end
 
-      class Icon < BaseSvgIcon
-      end
+      #{icon_classes.join("\n  ")}
     end
     CODE
+  end
+
+  private def classify_from_path(path : String)
+    path.strip
+      .gsub(/\/$/, "")        # strip trailing slahs
+      .split('/').last        # split at path delimiter
+      .gsub(/\.svg$/i, "")    # remove .svg extension
+      .underscore             # enusre lowercase and underscored
+      .gsub(/[\.\-\s]+/, "_") # strip common unwanted characters
+      .gsub(/^_|_$/, "")      # strip leading and trailing underscores
+      .camelcase              # CamelCase
+      .gsub(/^\d+/, "")       # strip leading numbers
   end
 end

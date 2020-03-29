@@ -110,7 +110,6 @@ class GenerateSvgSprite < LuckyCli::Task
       end
       parser.on("--init", "Puts all required files and folders in the right places") do
         initial_setup
-        exit
       end
     end
   end

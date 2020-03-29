@@ -306,6 +306,10 @@ This will automatically:
 - run spec file whenever they are saved
 - install shards whenever you save shard.yml
 
+## Documentation
+
+- [API (master)](https://tilishop.github.io/lucky_svg_sprite.cr)
+
 ## Contributing
 
 1. Fork it (https://github.com/tilishop/lucky_svg_sprite/fork)
@@ -321,4 +325,5 @@ This will automatically:
 
 ## Thanks & attributions
 - The SVG to Lucky component converter is heavily based on
-[HTML2Lucky](https://luckyhtml.herokuapp.com/). Thanks @paulcsmith! 
+[HTML2Lucky](https://luckyhtml.herokuapp.com/).
+Thanks [@paulcsmith](https://github.com/paulcsmith)! 

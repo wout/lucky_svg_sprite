@@ -22,7 +22,7 @@ dependencies:
 
 Run `shards install`.
 
-*__📄️ Note:__ Installation might take a while since the generator binary needs
+__📄️ Note:__ *Installation might take a while since the generator binary needs
 to be built. Be patient.*
 
 ## Usage
@@ -93,7 +93,7 @@ By using this flag, you will then be able to style your icons using CSS:
 }
 ```
 
-*__📄️ Note:__ Obviously, this is not recommended for multicolor icons.*
+__📄️ Note:__ *Obviously, this is not recommended for multicolor icons.*
 
 ### Automatically generating sprites 🚀️
 
@@ -124,6 +124,10 @@ guardian
 And watch your sprites be generated whenever you edit or add an icon to one of
 your sets.
 
+__📄️ Note:__ *This setup works well with Lucky's watcher, because when the new
+sprite file is generated, Lucky will pick up on that and start recompiling the
+app.*
+
 ### Mounting a sprite
 
 In your layout file, mount the sprite at the top of the body tag:
@@ -135,7 +139,7 @@ body do
 end
 ```
 
-*__📄️ Note:__ Yes, it's awkward, but it should be that way due to a
+__📄️ Note:__ *Yes, it's awkward, but it should be that way due to a
 [bug in Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=349175).
 If they are not at the top, or at least mounted before they are used, Chrome
 will not render the icons. There are fixes, but they are beyond the

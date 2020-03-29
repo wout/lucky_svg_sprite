@@ -39,7 +39,6 @@ class LuckySvgSprite::Converter
       .map { |p| p
         .gsub(/^-|-$/, "")
         .gsub(/^\d+-/, "") }
-
     "svg-#{parts[-2]}-#{parts[-1]}-icon"
   end
 end

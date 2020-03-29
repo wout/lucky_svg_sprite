@@ -22,5 +22,4 @@ scripts:
   postinstall: make generator
 
 crystal: 0.33.0
-
 license: MIT

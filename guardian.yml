@@ -9,6 +9,3 @@ run: bin/spec_mirror %file%
 ---
 files: ./src/**/*.cr
 run: bin/spec_mirror %file%
----
-files: ./shard.yml
-run: shards install

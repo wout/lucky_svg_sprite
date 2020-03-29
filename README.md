@@ -17,6 +17,9 @@ dependencies:
 
 Run `shards install`.
 
+*__📄️ Note:__ Installation might take a while since the generator binary needs
+to be built. Be patient.*
+
 ## Usage
 
 First, make sure your require this library in Lucky's shards.cr file:

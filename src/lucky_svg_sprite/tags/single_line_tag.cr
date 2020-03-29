@@ -1,3 +1,5 @@
+require "./tag"
+
 class LuckySvgSprite::SingleLineTag < LuckySvgSprite::Tag
   def print_io(io) : IO
     content = wrap_quotes(squish(tag.children.first.tag_text))

@@ -1,3 +1,5 @@
+require "./tag"
+
 class LuckySvgSprite::MultiLineTag < LuckySvgSprite::Tag
   BLOCK_START = " do\n"
   BLOCK_END   = "end"

@@ -1,11 +1,9 @@
 CRYSTAL_BIN ?= $(shell which crystal)
+SHARDS_BIN ?= $(shell which shards)
 SHARD_BIN 	= ../../bin
-TASKS_DIR   = ../../tasks
-SOURCE_FILE = generate_svg_sprite.cr
 TARGET_FILE = lucky.gen.svg_sprite
+SOURCE_FILE = ./tasks/generate_svg_sprite.cr
 
 generator:
-	cp ./tasks/$(SOURCE_FILE) $(TASKS_DIR)/$(SOURCE_FILE)
-	$(CRYSTAL_BIN) build $(TASKS_DIR)/$(SOURCE_FILE) -o $(SHARD_BIN)/$(TARGET_FILE) --release
-clean:
-	rm $(TASKS_DIR)/$(SOURCE_FILE)
+	$(SHARDS_BIN) build
+	$(CRYSTAL_BIN) build $(SOURCE_FILE) -o $(SHARD_BIN)/$(TARGET_FILE) --release

@@ -87,14 +87,25 @@ By using this flag, you will then be able to style your icons using CSS:
 
 *__📄️ Note:__ Obviously, this is not recommended for multicolor icons.*
 
-### Automatically generating sprites
+### Automatically generating sprites 🚀️
 
+If you have [Guardian.cr](https://github.com/f/guardian) installed, create a
+`guardfile.yml` (`guardian --init`) adn add the following line:
+
+```yaml
 files: ./src/components/svg_icons/default/*.svg
-run: lucky gen.svg_sprite --strip-colors
----
-files: ./src/components/svg_icons/fab/*.svg
-run: lucky gen.svg_sprite fab --strip-colors
+run: lucky gen.svg_sprite
+```
 
+You can do the same for all your icon sets, each with their own arguments:
+
+```yml
+files: ./src/components/svg_icons/default/*.svg
+run: lucky gen.svg_sprite
+---
+files: ./src/components/svg_icons/symbolic/*.svg
+run: lucky gen.svg_sprite symbolic --strip-colors
+```
 
 ### Mounting a sprite
 

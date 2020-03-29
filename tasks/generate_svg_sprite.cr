@@ -1,3 +1,9 @@
+require "lucky"
+require "lucky_cli"
+require "teeplate"
+require "colorize"
+require "file_utils"
+require "lucky_svg_sprite"
 require "option_parser"
 
 class GenerateSvgSprite < LuckyCli::Task
@@ -14,8 +20,10 @@ class GenerateSvgSprite < LuckyCli::Task
     generate_sprite(generator)
 
     puts generated_message(generator)
+    exit
   rescue e : Exception
     puts e.message.colorize.red
+    exit
   end
 
   private def icon_set_name
@@ -54,11 +62,19 @@ class GenerateSvgSprite < LuckyCli::Task
     "Generated #{sprite} with #{size} icon#{'s' unless size == 1}"
   end
 
+  private def init_message
+    <<-TEXT
+
+
+        Run "lucky gen.svg_sprite #{icon_set_name} --init" to set it up
+    TEXT
+  end
+
   private def ensure_target_structure
     if !File.exists?(icon_set_path)
-      raise %(Icon set "#{icon_set_path}" does not exist)
+      raise %(Icon set "#{icon_set_path}" does not exist #{init_message})
     elsif !File.exists?(sprites_path)
-      raise %(Target dir "#{sprites_path}" does not exist)
+      raise %(Target dir "#{sprites_path}" does not exist #{init_message})
     end
   end
 
@@ -104,3 +120,5 @@ class GenerateSvgSprite < LuckyCli::Task
     puts %(Created "#{target}").colorize.green
   end
 end
+
+GenerateSvgSprite.new.print_help_or_call(ARGV)

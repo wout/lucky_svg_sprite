@@ -158,7 +158,7 @@ body do
 end
 ```
 
-Evidently, icons for the respective sets sould be stored in:
+Evidently, icons for the respective sets should be stored in:
 
 ```
 src/components/svg_icons/colored

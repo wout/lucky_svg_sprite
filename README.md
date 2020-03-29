@@ -138,8 +138,8 @@ multiple icon sets. For example, you might need to have **symbolic** and
 
 ```crystal
 body do
-  mount SvgSprite::Default.new
-  mount SvgSprite::UnicornsAndRainbows.new
+  mount SvgSprite::Symbolic.new
+  mount SvgSprite::Colored.new
   ...
 end
 ```
@@ -185,6 +185,10 @@ mount SvgSprite::Default::Icon.new("aircraft-chopper-4")
 # src/components/svg_icons/my_lovely_set/ContactUs.svg
 mount SvgSprite::MyLovelySet::Icon.new("contact-us")
 ```
+
+*__📄️ Note:__ This file name transformation is done to ensure valid id
+references throughout. But many icon sets use lower case, dasherized file names.
+So that is not something to worry about in most cases.*
 
 ### Customizing attributes
 

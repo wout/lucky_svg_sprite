@@ -51,7 +51,7 @@ With just one single command:
 $ lucky gen.svg_sprite
 ```
 
-And all almost instantaneously! 🚀️
+And all instantaneously! 🚀️
 
 [![Build Status](https://travis-ci.org/tilishop/lucky_svg_sprite.cr.svg?branch=master)](https://travis-ci.org/tilishop/lucky_svg_sprite.cr)
 [![GitHub version](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr.svg)](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr)
@@ -85,7 +85,7 @@ require "lucky_svg_sprite"
 After installation, run the following command:
 
 ```bash
-lucky gen.svg_sprite --init
+$ lucky gen.svg_sprite --init
 ```
 
 This will set up the required structure and files:
@@ -99,7 +99,7 @@ This will set up the required structure and files:
 You can add a set name as well:
 
 ```bash
-lucky gen.svg_sprite menu_symbolic --init
+$ lucky gen.svg_sprite menu_symbolic --init
 ```
 
 Which will generate a directory for the given set name instead of **default**: 
@@ -111,14 +111,14 @@ Which will generate a directory for the given set name instead of **default**:
 To regenerate your sprite after adding new icons, run:
 
 ```bash
-lucky gen.svg_sprite
+$ lucky gen.svg_sprite
 ```
 
 This will generate a new sprite from the **default** set. Add the name of the
 set you want to generate:
 
 ```bash
-lucky gen.svg_sprite my_lovely_set
+$ lucky gen.svg_sprite my_lovely_set
 ```
 
 By default, this command assumes your icons are in the desired color and you 
@@ -127,7 +127,7 @@ don't change their `stroke` or `fill` through CSS. By passing the
 removed:
 
 ```bash
-lucky gen.svg_sprite --strip-colors
+$ lucky gen.svg_sprite --strip-colors
 ```
 
 By using this flag, you will then be able to style your icons using CSS:
@@ -165,7 +165,7 @@ run: lucky gen.svg_sprite symbolic --strip-colors
 Then, in a new terminal window, simply run:
 
 ```
-guardian
+$ guardian
 ```
 
 And watch your sprites be generated whenever you edit or add an icon to one of
@@ -349,7 +349,7 @@ Make sure you have [Guardian.cr](https://github.com/f/guardian) installed. Then
 run:
 
 ```bash
-guardian
+$ guardian
 ```
 
 This will automatically:

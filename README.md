@@ -252,6 +252,23 @@ is that you'll never have a missing icon. And if an SVG icon's source file gets
 deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.* 🎉️
 
+If you find yourself in a situation where you want to mount a series of icons
+using a loop (like in a menu for example), then a macro will come in handy:
+
+```crystal
+ul do
+  {% for button in %w[users products settings] %}
+    {% name = button.gsub(/-/, "-").camelcase %}
+    li do
+      link to: {{name.id}}::Index, flow_id: "{{button.id}}-section-button" do
+        mount SvgSprite::Menu::{{name.id}}.new
+        text {{name}}
+      end
+    end
+  {% end %}
+end
+``` 
+
 ### Customizing attributes
 
 #### `style`

@@ -32,7 +32,16 @@ class LuckySvgSprite::Generator
         #{concatenate(format)}
       end
 
-      #{icon_classes.join("\n  ")}
+      #{icon_classes.join("\n\n  ")}
+
+      class Icon < BaseSvgIcon
+        def initialize(@name : String? = nil)
+        end
+
+        def name
+          @name || super
+        end
+      end
     end
     CODE
   end

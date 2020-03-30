@@ -252,6 +252,18 @@ is that you'll never have a missing icon. And if an SVG icon's source file gets
 deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.* 🎉️
 
+Although, sometimes you might want to mount icons dynamically, in a loop for 
+example. It is not advisabel, but it can be done:
+
+```crystal
+%w[users products settings].each do |name|
+  mount SvgSprite::MyLovelySet::Icon.new(name)
+end
+```
+
+__📄️ Note:__ Using this method will not raise an error at compilation. If the
+icon does not exist, it will not be rendered. So, you're on your own.
+
 ### Customizing attributes
 
 #### `style`

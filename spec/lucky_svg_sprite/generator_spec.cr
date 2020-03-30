@@ -77,10 +77,23 @@ describe LuckySvgSprite::Generator do
         end
 
         class Activity < BaseSvgIcon; end
+
         class Command < BaseSvgIcon; end
+
         class Github < BaseSvgIcon; end
+
         class Wind < BaseSvgIcon; end
+
         class Zap < BaseSvgIcon; end
+
+        class Icon < BaseSvgIcon
+          def initialize(@name : String? = nil)
+          end
+
+          def name
+            @name || super
+          end
+        end
       end
       CODE
 
@@ -118,10 +131,23 @@ describe LuckySvgSprite::Generator do
         end
 
         class Activity < BaseSvgIcon; end
+
         class Command < BaseSvgIcon; end
+
         class Github < BaseSvgIcon; end
+
         class Wind < BaseSvgIcon; end
+
         class Zap < BaseSvgIcon; end
+
+        class Icon < BaseSvgIcon
+          def initialize(@name : String? = nil)
+          end
+
+          def name
+            @name || super
+          end
+        end
       end
       CODE
 

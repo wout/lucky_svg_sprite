@@ -14,12 +14,37 @@ describe LuckySvgSprite::Mixins::Icon do
   end
 end
 
+describe "Finding an icon my name" do
+  describe "#initialize" do
+    it "allows to be initialized without a name" do
+      icon = LuckySvgSpriteTest::Default::Icon.new
+      icon.name.should eq("icon")
+    end
+
+    it "allows to be initialized zith a name" do
+      icon = LuckySvgSpriteTest::Default::Icon.new("custom-name")
+      icon.name.should eq("custom-name")
+    end
+  end
+end
+
 module LuckySvgSpriteTest
   abstract class BaseTestIcon; end
 
   class Default
     class Testable < LuckySvgSpriteTest::BaseTestIcon
       include LuckySvgSprite::Mixins::Icon
+    end
+
+    class Icon
+      include LuckySvgSprite::Mixins::Icon
+
+      def initialize(@name : String? = nil)
+      end
+
+      def name
+        @name || super
+      end
     end
   end
 

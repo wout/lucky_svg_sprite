@@ -253,7 +253,7 @@ deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.* 🎉️
 
 Although, sometimes you might want to mount icons dynamically, in a loop for 
-example. It is not advisabel, but it can be done:
+example. It is not advisable, but it can be done:
 
 ```crystal
 %w[users products settings].each do |name|

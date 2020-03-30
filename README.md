@@ -7,9 +7,10 @@ folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
-This shard will turn regular SVG:
+Turn your regular SVG icon files:
 
 ```svg
+<!-- src/components/svg_icons/lucky-logo-symbolic.svg -->
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <g fill="none" stroke="#000000">
@@ -20,10 +21,10 @@ This shard will turn regular SVG:
 </svg>
 ```
 
-Into reusable Lucky SVG components:
+Into reusable Lucky components:
 
 ```crystal
-tag "symbol", id: "my-lucky-icon", viewBox="0 0 16 16" do
+tag "symbol", id: "svg-lucky-logo-symbolic-icon", viewBox="0 0 16 16" do
   tag "g", fill: "none", stroke: "#000000" do
     tag "path", d: "m12.626 ... 5.1818z", stroke_width: "1"
     tag "path", d: "m3.9846 ... 7.1105-12.89", stroke_width: "0.5"
@@ -31,6 +32,26 @@ tag "symbol", id: "my-lucky-icon", viewBox="0 0 16 16" do
   end
 end
 ```
+
+Which you can then easily mount in your pages:
+
+```crystal
+body do
+  mount SvgSprite::Default.new
+  
+  header do
+    mount SvgSprite::Default::LuckyLogoSymbolic.new
+  end
+end
+```
+
+With just one single command:
+
+```bash
+$ lucky gen.svg_sprite
+```
+
+And all almost instantaneously! 🚀️
 
 [![Build Status](https://travis-ci.org/tilishop/lucky_svg_sprite.cr.svg?branch=master)](https://travis-ci.org/tilishop/lucky_svg_sprite.cr)
 [![GitHub version](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr.svg)](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr)

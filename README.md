@@ -7,6 +7,9 @@ folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
+[![Build Status](https://travis-ci.org/tilishop/lucky_svg_sprite.cr.svg?branch=master)](https://travis-ci.org/tilishop/lucky_svg_sprite.cr)
+[![GitHub version](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr.svg)](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr)
+
 Turn your regular SVG icon files:
 
 ```svg
@@ -51,10 +54,7 @@ With just one single command:
 $ lucky gen.svg_sprite
 ```
 
-And all instantaneously! 🚀️
-
-[![Build Status](https://travis-ci.org/tilishop/lucky_svg_sprite.cr.svg?branch=master)](https://travis-ci.org/tilishop/lucky_svg_sprite.cr)
-[![GitHub version](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr.svg)](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr)
+And that's all instantaneously! 🚀️
 
 ## Installation
 

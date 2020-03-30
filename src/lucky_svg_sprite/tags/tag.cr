@@ -4,7 +4,7 @@ abstract class LuckySvgSprite::Tag
                Lucky::BaseTags::EMPTY_TAGS +
                Lucky::BaseTags::RENAMED_TAGS.values.to_a
   ATTR_TO_AVOID       = %w[class id style]
-  TOP_ATTR_TO_AVOID   = %w[height width]
+  TOP_ATTR_TO_AVOID   = %w[height width version xmlns]
   COLOR_ATTR_TO_AVOID = %w[fill stroke]
 
   getter depth, tag, format

@@ -39,7 +39,7 @@ class LuckySvgSprite::Generator
 
   private def classify_from_path(path : String)
     path.strip
-      .gsub(/\/$/, "")        # strip trailing slahs
+      .gsub(/\/$/, "")        # strip trailing slash
       .split('/').last        # split at path delimiter
       .gsub(/\.svg$/i, "")    # remove .svg extension
       .underscore             # enusre lowercase and underscored

@@ -7,6 +7,31 @@ folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
+This shard will turn regular SVG:
+
+```svg
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#000000">
+    <path d="m12.626 ... 5.1818z" stroke-width="1"/>
+    <path d="m3.9846 ... 7.1105-12.89" stroke-width="0.5"/>
+    <path d="m5.9305 ... 6.1854-11.213" stroke-width="0.5"/>
+  </g>
+</svg>
+```
+
+Into reusable Lucky SVG components:
+
+```crystal
+tag "symbol", id: "my-lucky-icon", viewBox="0 0 16 16" do
+  tag "g", fill: "none", stroke: "#000000" do
+    tag "path", d: "m12.626 ... 5.1818z", stroke_width: "1"
+    tag "path", d: "m3.9846 ... 7.1105-12.89", stroke_width: "0.5"
+    tag "path", d: "m5.9305 ... 6.1854-11.213", stroke_width: "0.5"
+  end
+end
+```
+
 [![Build Status](https://travis-ci.org/tilishop/lucky_svg_sprite.cr.svg?branch=master)](https://travis-ci.org/tilishop/lucky_svg_sprite.cr)
 [![GitHub version](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr.svg)](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr)
 

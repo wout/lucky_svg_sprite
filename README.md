@@ -257,8 +257,8 @@ using a loop (like in a menu for example), then a macro will come in handy:
 
 ```crystal
 ul do
-  {% for button in %w[users products settings] %}
-    {% name = button.gsub(/-/, "-").camelcase %}
+  {% for button in %w[users blog-posts settings] %}
+    {% name = button.gsub(/-/, "_").camelcase %}
     li do
       link to: {{name.id}}::Index, flow_id: "{{button.id}}-section-button" do
         mount SvgSprite::Menu::{{name.id}}.new

@@ -59,7 +59,7 @@ describe LuckySvgSprite::Converter do
     it "strips any unwanted attributes" do
       input = <<-SVG
       <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-      <svg viewBox="0 0 24 24" class="-u-icon" style="fill:red" version="1.1"  xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 24 24" class="-u-icon" style="fill:red" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
         <circle r="16" />
       </svg>
       SVG

@@ -37,11 +37,7 @@ abstract class LuckySvgSprite::Tag
   end
 
   def method_joiner
-    if custom_tag?
-      ", "
-    else
-      " "
-    end
+    custom_tag? ? ", " : " "
   end
 
   private def tag_name
@@ -74,7 +70,9 @@ abstract class LuckySvgSprite::Tag
 
   private def attribute_allowed?(key)
     avoid = ATTR_TO_AVOID + (format.colorless ? COLOR_ATTR_TO_AVOID : %w[])
-    !avoid.includes?(key) && (depth > 0 || !TOP_ATTR_TO_AVOID.includes?(key))
+    start = key.split(":").first
+    !avoid.includes?(start) &&
+      (depth > 0 || !TOP_ATTR_TO_AVOID.includes?(start))
   end
 
   private def lucky_can_handle_as_symbol?(key)

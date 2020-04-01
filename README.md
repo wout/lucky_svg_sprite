@@ -118,16 +118,18 @@ This will generate a new sprite from the **default** set. Add the name of the
 set you want to generate:
 
 ```bash
-$ lucky gen.svg_sprite my_lovely_set
+$ lucky gen.svg_sprite menu_icons
 ```
 
 By default, this command assumes your icons are in the desired color and you 
 don't change their `stroke` or `fill` through CSS. By passing the
-`--strip-color` flag, all `stroke` and `fill` attributes of your icons will be 
+`--strip-colors` flag, all `stroke` and `fill` attributes of your icons will be 
 removed:
 
 ```bash
 $ lucky gen.svg_sprite --strip-colors
+# or
+$ lucky gen.svg_sprite -c
 ```
 
 By using this flag, you will then be able to style your icons using CSS:
@@ -141,6 +143,17 @@ By using this flag, you will then be able to style your icons using CSS:
 ```
 
 __📄️ Note:__ *Obviously, this is not recommended for multicolor icons.*
+
+What if you want to take it further and strip other attributes as well? We got 
+you covered:
+
+```bash
+$ lucky gen.svg_sprite --strip=opacity,stroke-linecap,stroke-linejoin
+# or
+$ lucky gen.svg_sprite -s opacity,stroke-linecap,stroke-linejoin
+```
+
+All attributes you strip away can then be declared in your stylesheet.
 
 ### Automatically generating sprites 🚀️
 
@@ -283,9 +296,9 @@ Generated sprites are hidden with an inline style tag:
 </svg>
 ```
 
-If you are a puritan and believe style attributes have no place in HTML, then
-you are in luck. Just add a `style` method to your `base_svg_sprite.cr`
-component returning an empty string:
+If you believe style attributes have no place in HTML, then you are in luck.
+Just add a `style` method to your `base_svg_sprite.cr` component returning an
+empty string:
 
 ```crystal
 # src/components/base_svg_sprite.cr
@@ -347,7 +360,7 @@ Which will result in:
 # src/components/base_svg_icon.cr
 abstract class BaseSvgIcon < LuckySvgSprite::Icon
   def class_name
-    "my-icon my-#{set}-icon my-#{set}-#{name}-icon"
+    "#{set}__icon #{set}__icon--{name}"
   end
 end
 ```
@@ -355,8 +368,8 @@ end
 Which will result in:
 
 ```html
-<svg class="my-icon my-default-icon my-default-example-icon">
-  <use xlink:href="#svg-default-example-icon"></use>
+<svg class="menu__icon menu__icon--products">
+  <use xlink:href="#svg-menu-products-icon"></use>
 </svg>
 ```
 

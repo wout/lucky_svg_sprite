@@ -3,9 +3,8 @@ abstract class LuckySvgSprite::Tag
   NAMED_TAGS = Lucky::BaseTags::TAGS +
                Lucky::BaseTags::EMPTY_TAGS +
                Lucky::BaseTags::RENAMED_TAGS.values.to_a
-  ATTR_TO_AVOID       = %w[class id style]
-  TOP_ATTR_TO_AVOID   = %w[height width version xmlns]
-  COLOR_ATTR_TO_AVOID = %w[fill stroke]
+  ATTR_TO_AVOID     = %w[class id style]
+  TOP_ATTR_TO_AVOID = %w[height width version xmlns]
 
   getter depth, tag, format
 
@@ -69,7 +68,7 @@ abstract class LuckySvgSprite::Tag
   end
 
   private def attribute_allowed?(key)
-    avoid = ATTR_TO_AVOID + (format.colorless ? COLOR_ATTR_TO_AVOID : %w[])
+    avoid = ATTR_TO_AVOID + format.strip
     start = key.split(":").first
     !avoid.includes?(start) &&
       (depth > 0 || !TOP_ATTR_TO_AVOID.includes?(start))

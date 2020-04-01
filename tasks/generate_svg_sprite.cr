@@ -10,7 +10,7 @@ class GenerateSvgSprite < LuckyCli::Task
   summary "Generates a SVG sprite from the available icons for a given set"
   name "gen.svg_sprite"
 
-  @strip_colors : Bool = false
+  @strip = Array(String).new
 
   def call
     parse_options(ARGV)
@@ -51,7 +51,7 @@ class GenerateSvgSprite < LuckyCli::Task
   end
 
   private def generate_sprite(generator : LuckySvgSprite::Generator)
-    format = LuckySvgSprite::Format.new(colorless: @strip_colors)
+    format = LuckySvgSprite::Format.new(strip: @strip)
     File.write(sprite_file_name, generator.generate(format))
   end
 
@@ -105,10 +105,21 @@ class GenerateSvgSprite < LuckyCli::Task
 
   private def parse_options(args)
     OptionParser.parse(args) do |parser|
-      parser.on("-s", "--strip-colors", "Strips all fill and stroke attributes from SVG nodes") do
-        @strip_colors = true
+      parser.on(
+        "-c",
+        "--strip-colors",
+        "Strips all fill and stroke attributes from SVG nodes") do
+        @strip.push("fill", "stroke")
       end
-      parser.on("--init", "Puts all required files and folders in the right places") do
+      parser.on(
+        "-s ATTR",
+        "--strip=ATTR",
+        "Strips all attributes in given comma-separated list from SVG nodes") do |attr|
+        @strip += attr.split(',')
+      end
+      parser.on(
+        "--init",
+        "Puts all required files and folders in the right places") do
         initial_setup
       end
     end

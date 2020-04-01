@@ -1,10 +1,10 @@
 class LuckySvgSprite::Format
-  property colorless, id_param, indent
+  property id_param, indent, strip
 
   def initialize(
-    @colorless = false,
+    @id_param : String? = nil,
     @indent = 0,
-    @id_param : String? = nil
+    @strip = [] of String
   )
   end
 end

@@ -6,8 +6,8 @@ describe LuckySvgSprite::Format do
       test_format.indent.should eq(0)
     end
 
-    it "has a default value for colorless" do
-      test_format.colorless.should eq(false)
+    it "has a default value for strip" do
+      test_format.strip.should eq([] of String)
     end
 
     it "has a nilable value for id_param" do

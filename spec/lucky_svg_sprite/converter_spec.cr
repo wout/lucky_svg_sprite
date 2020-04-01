@@ -85,7 +85,24 @@ describe LuckySvgSprite::Converter do
       end
       OUTPUT
 
-      format = LuckySvgSprite::Format.new(colorless: true)
+      format = LuckySvgSprite::Format.new(strip: %w[fill stroke])
+      test_output(input, expected_output, format)
+    end
+
+    it "strips stroke-width if required" do
+      input = <<-SVG
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+        <circle r="16" stroke="coral" stroke-width="1" />
+      </svg>
+      SVG
+      expected_output = <<-OUTPUT
+      tag "symbol", fill: "none", viewBox: "0 0 24 24" do
+        tag "circle", r: "16", stroke: "coral"
+      end
+      OUTPUT
+
+      format = LuckySvgSprite::Format.new(strip: %w[stroke-width])
       test_output(input, expected_output, format)
     end
   end
@@ -110,7 +127,7 @@ describe LuckySvgSprite::Converter do
       end
       OUTPUT
 
-      format = LuckySvgSprite::Format.new(colorless: true)
+      format = LuckySvgSprite::Format.new(strip: %w[fill stroke])
       output = LuckySvgSprite::Converter.from_file(
         "./icons/my_set/github.svg", format)
       output.should eq_html(expected_output)

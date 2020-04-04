@@ -13,7 +13,7 @@ to mount sprites and icons in pages. Styling icons, like `width`,
 Turn your regular SVG icon files:
 
 ```svg
-<!-- src/components/svg_icons/lucky-logo-symbolic.svg -->
+<!-- src/components/svg_icons/default/lucky-logo-symbolic.svg -->
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <g fill="none" stroke="#000000">

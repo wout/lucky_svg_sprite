@@ -373,6 +373,15 @@ Which will result in:
 </svg>
 ```
 
+## Useful tools
+
+### Norde
+
+Managing and searching icons manually can be a tedious job. I found
+[Norde](https://norde.io/) to be very useful. It comes installed with a few icon
+sets, like Font Awesome and Material Design, but you can install any set you
+like. Best of all, it is available for Linux, macOS and Windows.
+
 ## Development
 
 Make sure you have [Guardian.cr](https://github.com/f/guardian) installed. Then

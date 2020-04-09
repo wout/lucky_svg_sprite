@@ -65,6 +65,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/tilishop/lucky_svg_sprite.cr/LuckySvgSprite/Inflector" data-name="luckysvgsprite::inflector">
+      <a href="LuckySvgSprite/Inflector.html">Inflector</a>
+      
+    </li>
+  
   <li class="parent " data-id="github.com/tilishop/lucky_svg_sprite.cr/LuckySvgSprite/Mixins" data-name="luckysvgsprite::mixins">
       <a href="LuckySvgSprite/Mixins.html">Mixins</a>
       
@@ -143,6 +148,44 @@ to mount sprites and icons in pages. Styling icons, like <code>width</code>,
 <p><a href="https://travis-ci.org/tilishop/lucky_svg_sprite.cr" target="_blank"><img src="https://travis-ci.org/tilishop/lucky_svg_sprite.cr.svg?branch=master" alt="Build Status"/></a>
 <a href="https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr" target="_blank"><img src="https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr.svg" alt="GitHub version"/></a></p>
 
+<p>Turn your regular SVG icon files:</p>
+
+<pre><code class="language-svg">&lt;!-- src/components/svg_icons/default/lucky-logo-symbolic.svg -->
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  &lt;g fill="none" stroke="#000000">
+    &lt;path d="m12.626 ... 5.1818z" stroke-width="1"/>
+    &lt;path d="m3.9846 ... 7.1105-12.89" stroke-width="0.5"/>
+    &lt;path d="m5.9305 ... 6.1854-11.213" stroke-width="0.5"/>
+  &lt;/g>
+&lt;/svg></code></pre>
+
+<p>Into reusable Lucky components:</p>
+
+<pre><code class="language-crystal">tag <span class="s">&quot;symbol&quot;</span>, id: <span class="s">&quot;svg-lucky-logo-symbolic-icon&quot;</span>, viewBox<span class="o">=</span><span class="s">&quot;0 0 16 16&quot;</span> <span class="k">do</span>
+  tag <span class="s">&quot;g&quot;</span>, fill: <span class="s">&quot;none&quot;</span>, stroke: <span class="s">&quot;#000000&quot;</span> <span class="k">do</span>
+    tag <span class="s">&quot;path&quot;</span>, d: <span class="s">&quot;m12.626 ... 5.1818z&quot;</span>, stroke_width: <span class="s">&quot;1&quot;</span>
+    tag <span class="s">&quot;path&quot;</span>, d: <span class="s">&quot;m3.9846 ... 7.1105-12.89&quot;</span>, stroke_width: <span class="s">&quot;0.5&quot;</span>
+    tag <span class="s">&quot;path&quot;</span>, d: <span class="s">&quot;m5.9305 ... 6.1854-11.213&quot;</span>, stroke_width: <span class="s">&quot;0.5&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>Which you can then easily mount in your pages:</p>
+
+<pre><code class="language-crystal">body <span class="k">do</span>
+  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span>.<span class="k">new</span>
+  
+  header <span class="k">do</span>
+    mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">LuckyLogoSymbolic</span>.<span class="k">new</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>With just one single command:</p>
+
+<pre><code class="language-bash">$ lucky gen.svg_sprite</code></pre>
+
+<p>And that's all instantaneously! 🚀️</p>
+
 <h2><a id="installation" class="anchor" href="#installation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -179,7 +222,7 @@ regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <p>After installation, run the following command:</p>
 
-<pre><code class="language-bash">lucky gen.svg_sprite --init</code></pre>
+<pre><code class="language-bash">$ lucky gen.svg_sprite --init</code></pre>
 
 <p>This will set up the required structure and files:</p>
 
@@ -187,7 +230,7 @@ regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <p>You can add a set name as well:</p>
 
-<pre><code class="language-bash">lucky gen.svg_sprite menu_symbolic --init</code></pre>
+<pre><code class="language-bash">$ lucky gen.svg_sprite menu_symbolic --init</code></pre>
 
 <p>Which will generate a directory for the given set name instead of <strong>default</strong>: </p>
 
@@ -201,19 +244,21 @@ regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <p>To regenerate your sprite after adding new icons, run:</p>
 
-<pre><code class="language-bash">lucky gen.svg_sprite</code></pre>
+<pre><code class="language-bash">$ lucky gen.svg_sprite</code></pre>
 
 <p>This will generate a new sprite from the <strong>default</strong> set. Add the name of the
 set you want to generate:</p>
 
-<pre><code class="language-bash">lucky gen.svg_sprite my_lovely_set</code></pre>
+<pre><code class="language-bash">$ lucky gen.svg_sprite menu_icons</code></pre>
 
 <p>By default, this command assumes your icons are in the desired color and you 
 don't change their <code>stroke</code> or <code>fill</code> through CSS. By passing the
-<code>--strip-color</code> flag, all <code>stroke</code> and <code>fill</code> attributes of your icons will be 
+<code>--strip-colors</code> flag, all <code>stroke</code> and <code>fill</code> attributes of your icons will be 
 removed:</p>
 
-<pre><code class="language-bash">lucky gen.svg_sprite --strip-colors</code></pre>
+<pre><code class="language-bash">$ lucky gen.svg_sprite --strip-colors
+# or
+$ lucky gen.svg_sprite -c</code></pre>
 
 <p>By using this flag, you will then be able to style your icons using CSS:</p>
 
@@ -224,6 +269,15 @@ removed:</p>
 }</code></pre>
 
 <p><strong>📄️ Note:</strong> <em>Obviously, this is not recommended for multicolor icons.</em></p>
+
+<p>What if you want to take it further and strip other attributes as well? We got 
+you covered:</p>
+
+<pre><code class="language-bash">$ lucky gen.svg_sprite --strip=opacity,stroke-linecap,stroke-linejoin
+# or
+$ lucky gen.svg_sprite -s opacity,stroke-linecap,stroke-linejoin</code></pre>
+
+<p>All attributes you strip away can then be declared in your stylesheet.</p>
 
 <h3><a id="automatically-generating-sprites" class="anchor" href="#automatically-generating-sprites">
   <svg class="octicon-link" aria-hidden="true">
@@ -247,7 +301,7 @@ run: lucky gen.svg_sprite symbolic --strip-colors</code></pre>
 
 <p>Then, in a new terminal window, simply run:</p>
 
-<pre><code>guardian</code></pre>
+<pre><code></code></pre>
 
 <p>And watch your sprites be generated whenever you edit or add an icon to one of
 your sets.</p>
@@ -285,7 +339,7 @@ multiple icon sets. For example, you might need to have <strong>symbolic</strong
   ...
 <span class="k">end</span></code></pre>
 
-<p>Evidently, icons for the respective sets sould be stored in:</p>
+<p>Evidently, icons for the respective sets should be stored in:</p>
 
 <pre><code>src<span class="s">/components/</span>svg_icons<span class="s">/colored
 src/</span>components<span class="s">/svg_icons/</span>symbolic</code></pre>
@@ -331,6 +385,21 @@ is that you'll never have a missing icon. And if an SVG icon's source file gets
 deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.</em> 🎉️</p>
 
+<p>If you find yourself in a situation where you want to mount a series of icons
+using a loop (like in a menu for example), then a macro will come in handy:</p>
+
+<pre><code class="language-crystal">ul <span class="k">do</span>
+  {% <span class="k">for</span> button <span class="k">in</span> <span class="s">%w[users blog-posts settings]</span> %}
+    {% name <span class="o">=</span> button.gsub(<span class="s">/-/</span>, <span class="s">&quot;_&quot;</span>).camelcase %}
+    li <span class="k">do</span>
+      link to: {{name.id}}<span class="t">::</span><span class="t">Index</span>, flow_id: <span class="s">&quot;{{button.id}}-section-button&quot;</span> <span class="k">do</span>
+        mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Menu</span><span class="t">::</span>{{name.id}}.<span class="k">new</span>
+        text {{name}}
+      <span class="k">end</span>
+    <span class="k">end</span>
+  {% <span class="k">end</span> %}
+<span class="k">end</span></code></pre>
+
 <h3><a id="customizing-attributes" class="anchor" href="#customizing-attributes">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -351,9 +420,9 @@ sprite. An added bonus of using Crystal.</em> 🎉️</p>
   &lt;/defs>
 &lt;/svg></code></pre>
 
-<p>If you are a puritan and believe style attributes have no place in HTML, then
-you are in luck. Just add a <code>style</code> method to your <code>base_svg_sprite.cr</code>
-component returning an empty string:</p>
+<p>If you believe style attributes have no place in HTML, then you are in luck.
+Just add a <code>style</code> method to your <code>base_svg_sprite.cr</code> component returning an
+empty string:</p>
 
 <pre><code class="language-crystal"><span class="c"># src/components/base_svg_sprite.cr</span>
 <span class="k">abstract</span> <span class="k">class</span> <span class="t">BaseSvgSprite</span> <span class="o">&lt;</span> <span class="t">LuckySvgSprite</span><span class="t">::</span><span class="t">Set</span>
@@ -409,15 +478,32 @@ class name you prefer over the default one.</p>
 <pre><code class="language-crystal"><span class="c"># src/components/base_svg_icon.cr</span>
 <span class="k">abstract</span> <span class="k">class</span> <span class="t">BaseSvgIcon</span> <span class="o">&lt;</span> <span class="t">LuckySvgSprite</span><span class="t">::</span><span class="t">Icon</span>
   <span class="k">def</span> <span class="m">class_name</span>
-    <span class="s">&quot;my-icon my-</span><span class="i">#{</span>set<span class="i">}</span><span class="s">-icon my-</span><span class="i">#{</span>set<span class="i">}</span><span class="s">-</span><span class="i">#{</span>name<span class="i">}</span><span class="s">-icon&quot;</span>
+    <span class="s">&quot;</span><span class="i">#{</span>set<span class="i">}</span><span class="s">__icon </span><span class="i">#{</span>set<span class="i">}</span><span class="s">__icon--{name}&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
 
 <p>Which will result in:</p>
 
-<pre><code class="language-html">&lt;svg class="my-icon my-default-icon my-default-example-icon">
-  &lt;use xlink:href="#svg-default-example-icon">&lt;/use>
+<pre><code class="language-html">&lt;svg class="menu__icon menu__icon--products">
+  &lt;use xlink:href="#svg-menu-products-icon">&lt;/use>
 &lt;/svg></code></pre>
+
+<h2><a id="useful-tools" class="anchor" href="#useful-tools">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Useful tools</h2>
+
+<h3><a id="norde" class="anchor" href="#norde">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Norde</h3>
+
+<p>Managing and searching icons manually can be a tedious job. I found
+<a href="https://norde.io/" target="_blank">Norde</a> to be very useful. It comes installed with a few icon
+sets, like Font Awesome and Material Design, but you can install any set you
+like. Best of all, it is available for Linux, macOS and Windows.</p>
 
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
@@ -428,7 +514,7 @@ class name you prefer over the default one.</p>
 <p>Make sure you have <a href="https://github.com/f/guardian" target="_blank">Guardian.cr</a> installed. Then
 run:</p>
 
-<pre><code class="language-bash">guardian</code></pre>
+<pre><code class="language-bash">$ guardian</code></pre>
 
 <p>This will automatically:</p>
 

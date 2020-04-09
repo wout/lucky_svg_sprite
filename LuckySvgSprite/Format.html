@@ -65,6 +65,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/tilishop/lucky_svg_sprite.cr/LuckySvgSprite/Inflector" data-name="luckysvgsprite::inflector">
+      <a href="../LuckySvgSprite/Inflector.html">Inflector</a>
+      
+    </li>
+  
   <li class="parent " data-id="github.com/tilishop/lucky_svg_sprite.cr/LuckySvgSprite/Mixins" data-name="luckysvgsprite::mixins">
       <a href="../LuckySvgSprite/Mixins.html">Mixins</a>
       
@@ -162,7 +167,7 @@
   </h2>
   
     
-      <a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L1" target="_blank">
+      <a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L1" target="_blank">
         lucky_svg_sprite/format.cr
       </a>
     
@@ -184,7 +189,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(colorless=false,indent=0,id_param:String?=nil)-class-method" class="signature"><strong>.new</strong>(colorless = <span class="n">false</span>, indent = <span class="n">0</span>, id_param : String? = <span class="n">nil</span>)</a>
+        <a href="#new(id_param:String?=nil,indent=0,strip=[]ofString)-class-method" class="signature"><strong>.new</strong>(id_param : String? = <span class="n">nil</span>, indent = <span class="n">0</span>, strip = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)</a>
         
       </li>
     
@@ -205,16 +210,6 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#colorless:Bool-instance-method" class="signature"><strong>#colorless</strong> : Bool</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#colorless=(colorless)-instance-method" class="signature"><strong>#colorless=</strong>(colorless)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#id_param:String?-instance-method" class="signature"><strong>#id_param</strong> : String?</a>
         
       </li>
@@ -231,6 +226,16 @@
     
       <li class="entry-summary">
         <a href="#indent=(indent)-instance-method" class="signature"><strong>#indent=</strong>(indent)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#strip:Array(String)-instance-method" class="signature"><strong>#strip</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#strip=(strip)-instance-method" class="signature"><strong>#strip=</strong>(strip)</a>
         
       </li>
     
@@ -274,18 +279,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(colorless=false,indent=0,id_param:String?=nil)-class-method">
+    <div class="entry-detail" id="new(id_param:String?=nil,indent=0,strip=[]ofString)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(colorless = <span class="n">false</span>, indent = <span class="n">0</span>, id_param : String? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(id_param : String? = <span class="n">nil</span>, indent = <span class="n">0</span>, strip = <span class="o">[]</span> <span class="k">of</span> <span class="t">String</span>)
 
-        <a class="method-permalink" href="#new(colorless=false,indent=0,id_param:String?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new(id_param:String?=nil,indent=0,strip=[]ofString)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -304,38 +309,6 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="colorless:Bool-instance-method">
-      <div class="signature">
-        
-        def <strong>colorless</strong> : Bool
-
-        <a class="method-permalink" href="#colorless:Bool-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="colorless=(colorless)-instance-method">
-      <div class="signature">
-        
-        def <strong>colorless=</strong>(colorless)
-
-        <a class="method-permalink" href="#colorless=(colorless)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="id_param:String?-instance-method">
       <div class="signature">
         
@@ -347,7 +320,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -363,7 +336,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -379,7 +352,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -395,7 +368,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/773290e876150b2f9ec3a7fee7e6b1db3db6bec3/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="strip:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>strip</strong> : Array(String)
+
+        <a class="method-permalink" href="#strip:Array(String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="strip=(strip)-instance-method">
+      <div class="signature">
+        
+        def <strong>strip=</strong>(strip)
+
+        <a class="method-permalink" href="#strip=(strip)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/tilishop/lucky_svg_sprite.cr/blob/61cb5751b24c78b521a137c08e8610b87067ae9e/src/lucky_svg_sprite/format.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>

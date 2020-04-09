@@ -54,7 +54,7 @@ describe LuckySvgSprite::Generator do
       # More information available here:
       # https://github.com/tilishop/lucky_svg_sprite.cr#generating-sprites
       class SvgSprite::MySet < BaseSvgSprite
-        def render_icons : IO
+        def render_icons
           tag "symbol", fill: "none", id: "svg-my-set-activity-icon", stroke_linecap: "round", stroke_linejoin: "round", stroke_width: "2", viewBox: "0 0 24 24" do
             tag "path", d: "M22 12L18 12 15 21 9 3 6 12 2 12"
           end
@@ -95,7 +95,7 @@ describe LuckySvgSprite::Generator do
       # More information available here:
       # https://github.com/tilishop/lucky_svg_sprite.cr#generating-sprites
       class SvgSprite::MySet < BaseSvgSprite
-        def render_icons : IO
+        def render_icons
           tag "symbol", id: "svg-my-set-activity-icon", stroke_width: "2", viewBox: "0 0 24 24" do
             tag "path", d: "M22 12L18 12 15 21 9 3 6 12 2 12"
           end

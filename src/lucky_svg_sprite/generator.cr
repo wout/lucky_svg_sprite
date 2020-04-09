@@ -28,7 +28,7 @@ class LuckySvgSprite::Generator
     # More information available here:
     # https://github.com/tilishop/lucky_svg_sprite.cr#generating-sprites
     class SvgSprite::#{sprite_name} < BaseSvgSprite
-      def render_icons : IO
+      def render_icons
         #{concatenate(format)}
       end
 

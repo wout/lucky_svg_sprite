@@ -1,5 +1,5 @@
 name: lucky_svg_sprite
-version: 0.3.0
+version: 0.3.1
 
 authors:
   - wout <wout@mick-wout.com>
@@ -16,7 +16,7 @@ development_dependencies:
     version: ~> 0.11.0
   lucky:
     github:  luckyframework/lucky
-    ver: ~> 0.19.0
+    ver: ~> 0.20.0
 
 scripts:
   postinstall: make generator

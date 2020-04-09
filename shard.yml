@@ -1,5 +1,5 @@
 name: lucky_svg_sprite
-version: 0.3.1
+version: 0.4.0
 
 authors:
   - wout <wout@mick-wout.com>
@@ -7,6 +7,8 @@ authors:
 dependencies:
   myhtml:
     github: kostya/myhtml
+  cadmium_transliterator:
+    github: cadmiumcr/transliterator
 
 development_dependencies:
   spec_mirror:

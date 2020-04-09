@@ -140,10 +140,10 @@ describe LuckySvgSprite::Converter do
       id.should eq("svg-my-set-github-icon")
       id = LuckySvgSprite::Converter.id_for_icon("./icons/MySet/BloodyMary.svg")
       id.should eq("svg-my-set-bloody-mary-icon")
-      id = LuckySvgSprite::Converter.id_for_icon("./icons/_messy.set/123-fab.red.svg")
+      id = LuckySvgSprite::Converter.id_for_icon("./icons/_messy-set/123-fab.red.svg")
       id.should eq("svg-messy-set-fab-red-icon")
       id = LuckySvgSprite::Converter.id_for_icon("./icons/WIN_95/TCP_IP.SVG")
-      id.should eq("svg-win-95-tcp-ip-icon")
+      id.should eq("svg-win95-tcp-ip-icon")
     end
   end
 end

@@ -1,5 +1,6 @@
 require "lucky"
 require "myhtml"
+require "cadmium_transliterator"
 require "./lucky_svg_sprite/mixins/**"
 require "./lucky_svg_sprite/tags/tag"
 require "./lucky_svg_sprite/tags/**"

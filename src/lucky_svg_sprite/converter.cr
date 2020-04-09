@@ -31,14 +31,9 @@ class LuckySvgSprite::Converter
   end
 
   def self.id_for_icon(file : String)
-    parts = file
-      .gsub(/\.svg$/i, "")
-      .underscore
-      .gsub(/[-_\.\s]+/, '-')
-      .split('/')
-      .map { |p| p
-        .gsub(/^-|-$/, "")
-        .gsub(/^\d+-/, "") }
+    parts = file.split("/").map do |part|
+      Inflector.dasherize(part, from_path: true, from_class: true)
+    end
     "svg-#{parts[-2]}-#{parts[-1]}-icon"
   end
 end

@@ -26,6 +26,13 @@ describe LuckySvgSprite::Generator do
     end
   end
 
+  describe "#manifest" do
+    it "generates a comma separated list of icon names" do
+      test_svg_sprite_generator.manifest
+        .should eq(%("activity", "command", "github", "wind", "zap"))
+    end
+  end
+
   describe "#sprite_name" do
     it "generates a sprite name from the icon dir" do
       generator = LuckySvgSprite::Generator.new("./icons/my_set")
@@ -37,7 +44,7 @@ describe LuckySvgSprite::Generator do
       generator = LuckySvgSprite::Generator.new("./icons/Yet Another Set")
       generator.sprite_name.should eq("YetAnotherSet")
       generator = LuckySvgSprite::Generator.new("./icons/123--Flup.extended")
-      generator.sprite_name.should eq("FlupExtended")
+      generator.sprite_name.should eq("Flup")
       generator = LuckySvgSprite::Generator.new("./icons/123--Flap.svg")
       generator.sprite_name.should eq("Flap")
       generator = LuckySvgSprite::Generator.new("./icons/-webkit-set-")
@@ -54,6 +61,8 @@ describe LuckySvgSprite::Generator do
       # More information available here:
       # https://github.com/tilishop/lucky_svg_sprite.cr#generating-sprites
       class SvgSprite::MySet < BaseSvgSprite
+        MANIFEST = {"activity", "command", "github", "wind", "zap"}
+
         def render_icons
           tag "symbol", fill: "none", id: "svg-my-set-activity-icon", stroke_linecap: "round", stroke_linejoin: "round", stroke_width: "2", viewBox: "0 0 24 24" do
             tag "path", d: "M22 12L18 12 15 21 9 3 6 12 2 12"
@@ -95,6 +104,8 @@ describe LuckySvgSprite::Generator do
       # More information available here:
       # https://github.com/tilishop/lucky_svg_sprite.cr#generating-sprites
       class SvgSprite::MySet < BaseSvgSprite
+        MANIFEST = {"activity", "command", "github", "wind", "zap"}
+
         def render_icons
           tag "symbol", id: "svg-my-set-activity-icon", stroke_width: "2", viewBox: "0 0 24 24" do
             tag "path", d: "M22 12L18 12 15 21 9 3 6 12 2 12"

@@ -270,7 +270,7 @@ using a loop (like in a menu for example), then a macro will come in handy:
 
 ```crystal
 ul do
-  {% for button in %w[users blog-posts settings] %}
+  {% for button in SvgSprite::Menu::MANIFEST %}
     {% name = button.gsub(/-/, "_").camelcase %}
     li do
       link to: {{name.id}}::Index, flow_id: "{{button.id}}-section-button" do
@@ -280,7 +280,13 @@ ul do
     end
   {% end %}
 end
-``` 
+```
+
+__📄️ Note:__ *Every sprite carries a tuple containing the names of all its
+icons; a manifest if you will. For the menu example above, it can be found in 
+`SvgSprite::Menu::MANIFEST`. The returned list contains sanitized, parameterized 
+icon file names, without their extension. So for example: 
+`{"my-account", "dashboard", "blog-posts"}`*
 
 ### Customizing attributes
 

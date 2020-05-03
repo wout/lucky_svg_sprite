@@ -15,13 +15,13 @@ development_dependencies:
     github: tilishop/spec_mirror.cr
   ameba:
     github: crystal-ameba/ameba
-    version: ~> 0.11.0
+    version: ~> 0.12
   lucky:
     github:  luckyframework/lucky
-    ver: ~> 0.20.0
+    version: ~> 0.21
 
 scripts:
   postinstall: make generator
 
-crystal: 0.33.0
+crystal: 0.34.0
 license: MIT

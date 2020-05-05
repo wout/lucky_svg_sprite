@@ -7,6 +7,7 @@ authors:
 dependencies:
   myhtml:
     github: kostya/myhtml
+    version: ~> 1.5
   cadmium_transliterator:
     github: cadmiumcr/transliterator
 

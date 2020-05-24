@@ -4,7 +4,7 @@ class LuckySvgSprite::Format
   def initialize(
     @id_param : String? = nil,
     @indent = 0,
-    @strip = [] of String
+    @strip = %w[]
   )
   end
 end

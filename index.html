@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.32.1">
+<meta name="generator" content="Crystal Docs 0.33.0">
 
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/doc.js"></script>
@@ -389,7 +389,7 @@ sprite. An added bonus of using Crystal.</em> 🎉️</p>
 using a loop (like in a menu for example), then a macro will come in handy:</p>
 
 <pre><code class="language-crystal">ul <span class="k">do</span>
-  {% <span class="k">for</span> button <span class="k">in</span> <span class="s">%w[users blog-posts settings]</span> %}
+  {% <span class="k">for</span> button <span class="k">in</span> <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Menu</span><span class="t">::</span><span class="t">MANIFEST</span> %}
     {% name <span class="o">=</span> button.gsub(<span class="s">/-/</span>, <span class="s">&quot;_&quot;</span>).camelcase %}
     li <span class="k">do</span>
       link to: {{name.id}}<span class="t">::</span><span class="t">Index</span>, flow_id: <span class="s">&quot;{{button.id}}-section-button&quot;</span> <span class="k">do</span>
@@ -399,6 +399,12 @@ using a loop (like in a menu for example), then a macro will come in handy:</p>
     <span class="k">end</span>
   {% <span class="k">end</span> %}
 <span class="k">end</span></code></pre>
+
+<p><strong>📄️ Note:</strong> <em>Every sprite carries a tuple containing the names of all its
+icons; a manifest if you will. For the menu example above, it can be found in 
+<code>SvgSprite::Menu::MANIFEST</code>. The returned list contains sanitized, parameterized 
+icon file names, without their extension. So for example: 
+<code>{"my-account", "dashboard", "blog-posts"}</code></em></p>
 
 <h3><a id="customizing-attributes" class="anchor" href="#customizing-attributes">
   <svg class="octicon-link" aria-hidden="true">

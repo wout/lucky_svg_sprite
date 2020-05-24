@@ -15,6 +15,7 @@ script:
   - crystal spec
   - crystal tool format --check src spec
   - bin/ameba src
+  - crystal docs
 
 deploy:
   github_token: $GITHUB_TOKEN

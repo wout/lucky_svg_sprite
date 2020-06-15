@@ -1,15 +1,10 @@
 name: lucky_svg_sprite
-version: 0.4.2
+version: 0.5.0
 
 authors:
   - wout <wout@mick-wout.com>
 
-dependencies:
-  myhtml:
-    github: kostya/myhtml
-    version: ~> 1.5
-  cadmium_transliterator:
-    github: cadmiumcr/transliterator
+crystal: 0.34.0
 
 development_dependencies:
   spec_mirror:
@@ -20,9 +15,8 @@ development_dependencies:
   lucky:
     github:  luckyframework/lucky
     version: ~> 0.21
+  lucky_svg_sprite_cli:
+    github: tilishop/lucky_svg_sprite_cli.cr
+    version: ~> 0.1
 
-scripts:
-  postinstall: make generator
-
-crystal: 0.34.0
 license: MIT

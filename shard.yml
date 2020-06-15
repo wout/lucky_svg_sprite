@@ -12,6 +12,9 @@ development_dependencies:
   ameba:
     github: crystal-ameba/ameba
     version: ~> 0.12
+  myhtml:
+    github: kostya/myhtml
+    version: ~> 1.5
   lucky:
     github:  luckyframework/lucky
     version: ~> 0.21

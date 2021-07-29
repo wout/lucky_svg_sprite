@@ -1,6 +1,6 @@
 # Lucky SVG Sprite generator
 
-![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/tilitribe/lucky_svg_sprite.cr/master/templates/example.svg?sanitize=true)
+![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/tilitribe/lucky_svg_sprite.cr/master/logo.svg?sanitize=true)
 
 Generate [Lucky](https://luckyframework.org/)-flavored SVG sprites from a 
 folder of separate SVG icons. This shard includes the necessary Lucky components

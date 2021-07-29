@@ -1,3 +1,3 @@
 module LuckySvgSprite
-  VERSION = "v0.5.0"
+  VERSION = "v0.6.0"
 end

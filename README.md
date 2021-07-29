@@ -1,14 +1,13 @@
 # Lucky SVG Sprite generator
 
-![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/tilishop/lucky_svg_sprite.cr/master/templates/example.svg?sanitize=true)
+![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/tilitribe/lucky_svg_sprite.cr/master/templates/example.svg?sanitize=true)
 
 Generate [Lucky](https://luckyframework.org/)-flavored SVG sprites from a 
 folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
-[![Build Status](https://travis-ci.org/tilishop/lucky_svg_sprite.cr.svg?branch=master)](https://travis-ci.org/tilishop/lucky_svg_sprite.cr)
-[![GitHub version](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr.svg)](https://badge.fury.io/gh/tilishop%2Flucky_svg_sprite.cr)
+
 
 Turn your regular SVG icon files:
 
@@ -63,7 +62,7 @@ Add the dependency to your `shard.yml`:
 ```yaml
 dependencies:
   lucky_svg_sprite:
-    github: tilishop/lucky_svg_sprite.cr
+    github: tilitribe/lucky_svg_sprite.cr
 ```
 
 Run `shards install`.
@@ -405,11 +404,11 @@ This will automatically:
 
 ## Documentation
 
-- [API (master)](https://tilishop.github.io/lucky_svg_sprite.cr)
+- [API (master)](https://tilitribe.github.io/lucky_svg_sprite.cr)
 
 ## Contributing
 
-1. Fork it (https://github.com/tilishop/lucky_svg_sprite/fork)
+1. Fork it (https://github.com/tilitribe/lucky_svg_sprite/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -418,7 +417,7 @@ This will automatically:
 ## Contributors
 
 - [wout](https://github.com/wout) - creator and maintainer
-- [tilishop](https://github.com/tilishop) - owner and maintainer
+- [tilitribe](https://github.com/tilitribe) - owner and maintainer
 
 ## Thanks & attributions
 - The SVG to Lucky component converter is heavily based on

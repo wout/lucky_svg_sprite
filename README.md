@@ -7,7 +7,9 @@ folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
-
+![GitHub](https://img.shields.io/github/license/tilitribe/lucky_svg_sprite.cr)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/tilitribe/lucky_svg_sprite.cr)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/tilitribe/lucky_svg_sprite.cr/lucky_svg_sprite%20CI)
 
 Turn your regular SVG icon files:
 

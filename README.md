@@ -1,15 +1,15 @@
 # Lucky SVG Sprite generator
 
-![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/tilitribe/lucky_svg_sprite.cr/master/logo.svg?sanitize=true)
+![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/wout/lucky_svg_sprite.cr/master/logo.svg?sanitize=true)
 
 Generate [Lucky](https://luckyframework.org/)-flavored SVG sprites from a 
 folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
-![GitHub](https://img.shields.io/github/license/tilitribe/lucky_svg_sprite.cr)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/tilitribe/lucky_svg_sprite.cr)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/tilitribe/lucky_svg_sprite.cr/lucky_svg_sprite%20CI)
+![GitHub](https://img.shields.io/github/license/wout/lucky_svg_sprite.cr)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/wout/lucky_svg_sprite.cr)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/wout/lucky_svg_sprite.cr/lucky_svg_sprite%20CI)
 
 Turn your regular SVG icon files:
 
@@ -64,7 +64,7 @@ Add the dependency to your `shard.yml`:
 ```yaml
 dependencies:
   lucky_svg_sprite:
-    github: tilitribe/lucky_svg_sprite.cr
+    github: wout/lucky_svg_sprite.cr
 ```
 
 Run `shards install`.
@@ -406,11 +406,11 @@ This will automatically:
 
 ## Documentation
 
-- [API (master)](https://tilitribe.github.io/lucky_svg_sprite.cr)
+- [API (master)](https://wout.github.io/lucky_svg_sprite.cr)
 
 ## Contributing
 
-1. Fork it (https://github.com/tilitribe/lucky_svg_sprite/fork)
+1. Fork it (https://github.com/wout/lucky_svg_sprite/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -419,7 +419,6 @@ This will automatically:
 ## Contributors
 
 - [wout](https://github.com/wout) - creator and maintainer
-- [tilitribe](https://github.com/tilitribe) - owner and maintainer
 
 ## Thanks & attributions
 - The SVG to Lucky component converter is heavily based on

@@ -1,10 +1,15 @@
 name: lucky_svg_sprite
-version: 0.6.1
+version: 0.7.0
 
 authors:
   - wout <hi@wout.codes>
 
 crystal: ">= 1.0.0"
+
+dependencies:
+  lucky_svg_sprite_cli:
+    github: wout/lucky_svg_sprite_cli.cr
+    version: ~> 0.3.3
 
 development_dependencies:
   spec_mirror:
@@ -18,8 +23,5 @@ development_dependencies:
   lucky:
     github:  luckyframework/lucky
     version: ~> 0.28
-  lucky_svg_sprite_cli:
-    github: wout/lucky_svg_sprite_cli.cr
-    version: ~> 0.3.3
 
 license: MIT

@@ -1,15 +1,15 @@
 # Lucky SVG Sprite generator
 
-![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/wout/lucky_svg_sprite.cr/master/logo.svg?sanitize=true)
+![Lucky SVG Sprite generator logo](https://raw.githubusercontent.com/wout/lucky_svg_sprite/master/logo.svg?sanitize=true)
 
 Generate [Lucky](https://luckyframework.org/)-flavored SVG sprites from a 
 folder of separate SVG icons. This shard includes the necessary Lucky components
 to mount sprites and icons in pages. Styling icons, like `width`, 
 `height`, `stroke`, `fill` and `opacity`, can be done in CSS.
 
-![GitHub](https://img.shields.io/github/license/wout/lucky_svg_sprite.cr)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/wout/lucky_svg_sprite.cr)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/wout/lucky_svg_sprite.cr/lucky_svg_sprite%20CI)
+![GitHub](https://img.shields.io/github/license/wout/lucky_svg_sprite)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/wout/lucky_svg_sprite)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/wout/lucky_svg_sprite/lucky_svg_sprite%20CI)
 
 Turn your regular SVG icon files:
 
@@ -64,7 +64,7 @@ Add the dependency to your `shard.yml`:
 ```yaml
 dependencies:
   lucky_svg_sprite:
-    github: wout/lucky_svg_sprite.cr
+    github: wout/lucky_svg_sprite
 ```
 
 Run `shards install`.
@@ -406,7 +406,7 @@ This will automatically:
 
 ## Documentation
 
-- [API (master)](https://wout.github.io/lucky_svg_sprite.cr)
+- [API (master)](https://wout.github.io/lucky_svg_sprite)
 
 ## Contributing
 

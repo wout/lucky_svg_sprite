@@ -149,7 +149,7 @@ to mount sprites and icons in pages. Styling icons, like <code>width</code>,
 
 <p>With just one single command:</p>
 
-<pre><code class="language-bash">$ lucky gen.svg_sprite</code></pre>
+<pre><code class="language-bash">$ bin/svg_sprite</code></pre>
 
 <p>And that's all instantaneously! 🚀️</p>
 
@@ -189,7 +189,7 @@ regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <p>After installation, run the following command:</p>
 
-<pre><code class="language-bash">$ lucky gen.svg_sprite --init</code></pre>
+<pre><code class="language-bash">$ bin/svg_sprite --init</code></pre>
 
 <p>This will set up the required structure and files:</p>
 
@@ -197,7 +197,7 @@ regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <p>You can add a set name as well:</p>
 
-<pre><code class="language-bash">$ lucky gen.svg_sprite menu_symbolic --init</code></pre>
+<pre><code class="language-bash">$ bin/svg_sprite --init menu_symbolic</code></pre>
 
 <p>Which will generate a directory for the given set name instead of <strong>default</strong>: </p>
 
@@ -211,21 +211,21 @@ regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <p>To regenerate your sprite after adding new icons, run:</p>
 
-<pre><code class="language-bash">$ lucky gen.svg_sprite</code></pre>
+<pre><code class="language-bash">$ bin/svg_sprite</code></pre>
 
 <p>This will generate a new sprite from the <strong>default</strong> set. Add the name of the
 set you want to generate:</p>
 
-<pre><code class="language-bash">$ lucky gen.svg_sprite menu_icons</code></pre>
+<pre><code class="language-bash">$ bin/svg_sprite menu_icons</code></pre>
 
 <p>By default, this command assumes your icons are in the desired color and you 
 don't change their <code>stroke</code> or <code>fill</code> through CSS. By passing the
 <code>--strip-colors</code> flag, all <code>stroke</code> and <code>fill</code> attributes of your icons will be 
 removed:</p>
 
-<pre><code class="language-bash">$ lucky gen.svg_sprite --strip-colors
+<pre><code class="language-bash">$ bin/svg_sprite --strip-colors
 # or
-$ lucky gen.svg_sprite -c</code></pre>
+$ bin/svg_sprite -c</code></pre>
 
 <p>By using this flag, you will then be able to style your icons using CSS:</p>
 
@@ -240,9 +240,9 @@ $ lucky gen.svg_sprite -c</code></pre>
 <p>What if you want to take it further and strip other attributes as well? We got 
 you covered:</p>
 
-<pre><code class="language-bash">$ lucky gen.svg_sprite --strip=opacity,stroke-linecap,stroke-linejoin
+<pre><code class="language-bash">$ bin/svg_sprite --strip=opacity,stroke-linecap,stroke-linejoin
 # or
-$ lucky gen.svg_sprite -s opacity,stroke-linecap,stroke-linejoin</code></pre>
+$ bin/svg_sprite -s opacity,stroke-linecap,stroke-linejoin</code></pre>
 
 <p>All attributes you strip away can then be declared in your stylesheet.</p>
 
@@ -256,15 +256,15 @@ $ lucky gen.svg_sprite -s opacity,stroke-linecap,stroke-linejoin</code></pre>
 <code>guardfile.yml</code> (<code>guardian --init</code>) and add the following line:</p>
 
 <pre><code class="language-yaml">files: ./src/components/svg_icons/default/*.svg
-run: lucky gen.svg_sprite</code></pre>
+run: bin/svg_sprite</code></pre>
 
 <p>You can do the same for all your icon sets, each with their own arguments:</p>
 
 <pre><code class="language-yml">files: ./src/components/svg_icons/default/*.svg
-run: lucky gen.svg_sprite
+run: bin/svg_sprite
 ---
 files: ./src/components/svg_icons/symbolic/*.svg
-run: lucky gen.svg_sprite symbolic --strip-colors</code></pre>
+run: bin/svg_sprite symbolic --strip-colors</code></pre>
 
 <p>Then, in a new terminal window, simply run:</p>
 

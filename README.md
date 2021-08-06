@@ -52,7 +52,7 @@ end
 With just one single command:
 
 ```bash
-$ lucky gen.svg_sprite
+$ bin/svg_sprite
 ```
 
 And that's all instantaneously! 🚀️
@@ -86,7 +86,7 @@ require "lucky_svg_sprite"
 After installation, run the following command:
 
 ```bash
-$ lucky gen.svg_sprite -- --init
+$ bin/svg_sprite --init
 ```
 
 This will set up the required structure and files:
@@ -100,7 +100,7 @@ This will set up the required structure and files:
 You can add a set name as well:
 
 ```bash
-$ lucky gen.svg_sprite menu_symbolic -- --init
+$ bin/svg_sprite --init menu_symbolic
 ```
 
 Which will generate a directory for the given set name instead of **default**: 
@@ -112,14 +112,14 @@ Which will generate a directory for the given set name instead of **default**:
 To regenerate your sprite after adding new icons, run:
 
 ```bash
-$ lucky gen.svg_sprite
+$ bin/svg_sprite
 ```
 
 This will generate a new sprite from the **default** set. Add the name of the
 set you want to generate:
 
 ```bash
-$ lucky gen.svg_sprite menu_icons
+$ bin/svg_sprite menu_icons
 ```
 
 By default, this command assumes your icons are in the desired color and you 
@@ -128,9 +128,9 @@ don't change their `stroke` or `fill` through CSS. By passing the
 removed:
 
 ```bash
-$ lucky gen.svg_sprite -- --strip-colors
+$ bin/svg_sprite --strip-colors
 # or
-$ lucky gen.svg_sprite -- -c
+$ bin/svg_sprite -c
 ```
 
 By using this flag, you will then be able to style your icons using CSS:
@@ -149,9 +149,9 @@ What if you want to take it further and strip other attributes as well? We got
 you covered:
 
 ```bash
-$ lucky gen.svg_sprite -- --strip=opacity,stroke-linecap,stroke-linejoin
+$ bin/svg_sprite --strip=opacity,stroke-linecap,stroke-linejoin
 # or
-$ lucky gen.svg_sprite -- -s opacity,stroke-linecap,stroke-linejoin
+$ bin/svg_sprite -s opacity,stroke-linecap,stroke-linejoin
 ```
 
 All attributes you strip away can then be declared in your stylesheet.
@@ -163,17 +163,17 @@ If you have [Guardian.cr](https://github.com/f/guardian) installed, create a
 
 ```yaml
 files: ./src/components/svg_icons/default/*.svg
-run: lucky gen.svg_sprite
+run: bin/svg_sprite
 ```
 
 You can do the same for all your icon sets, each with their own arguments:
 
 ```yml
 files: ./src/components/svg_icons/default/*.svg
-run: lucky gen.svg_sprite
+run: bin/svg_sprite
 ---
 files: ./src/components/svg_icons/symbolic/*.svg
-run: lucky gen.svg_sprite symbolic -- --strip-colors
+run: bin/svg_sprite symbolic --strip-colors
 ```
 
 Then, in a new terminal window, simply run:

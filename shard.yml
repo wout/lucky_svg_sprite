@@ -9,7 +9,7 @@ crystal: ">= 1.0.0"
 dependencies:
   lucky_svg_sprite_cli:
     github: wout/lucky_svg_sprite_cli
-    branch: master
+    version: ">= 0.5.0"
 
 development_dependencies:
   spec_mirror:

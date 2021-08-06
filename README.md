@@ -86,7 +86,7 @@ require "lucky_svg_sprite"
 After installation, run the following command:
 
 ```bash
-$ bin/svg_sprite --init
+$ bin/svg_sprite --init default
 ```
 
 This will set up the required structure and files:

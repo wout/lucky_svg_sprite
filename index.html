@@ -195,13 +195,9 @@ regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
 
 <ul><li><code>src/components/base_svg_icon.cr</code> (for customization)</li><li><code>src/components/base_svg_sprite.cr</code> (for customization)</li><li><code>src/components/svg_icons/default/example.svg</code> (<code>example</code> icon)</li><li><code>src/components/svg_sprites</code> (where generated sprites will be stored)</li><li><code>src/components/svg_sprites/default.cr</code> (sprite component with <code>example</code> icon)</li></ul>
 
-<p>You can add a set name as well:</p>
+<p>You can choose a different set name too:</p>
 
 <pre><code class="language-bash">$ bin/svg_sprite --init menu_symbolic</code></pre>
-
-<p>Which will generate a directory for the given set name instead of <strong>default</strong>: </p>
-
-<ul><li><code>src/components/svg_icons/menu_symbolic/example.svg</code> (<code>example</code> icon)</li></ul>
 
 <h3><a id="generating-sprites" class="anchor" href="#generating-sprites">
   <svg class="octicon-link" aria-hidden="true">
@@ -225,7 +221,9 @@ removed:</p>
 
 <pre><code class="language-bash">$ bin/svg_sprite --strip-colors
 # or
-$ bin/svg_sprite -c</code></pre>
+$ bin/svg_sprite -c
+# or
+$ bin/svg_sprite menu_icons -c</code></pre>
 
 <p>By using this flag, you will then be able to style your icons using CSS:</p>
 

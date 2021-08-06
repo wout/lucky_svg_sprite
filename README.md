@@ -86,7 +86,7 @@ require "lucky_svg_sprite"
 After installation, run the following command:
 
 ```bash
-$ lucky gen.svg_sprite --init
+$ lucky gen.svg_sprite -- --init
 ```
 
 This will set up the required structure and files:
@@ -100,7 +100,7 @@ This will set up the required structure and files:
 You can add a set name as well:
 
 ```bash
-$ lucky gen.svg_sprite menu_symbolic --init
+$ lucky gen.svg_sprite menu_symbolic -- --init
 ```
 
 Which will generate a directory for the given set name instead of **default**: 
@@ -128,9 +128,9 @@ don't change their `stroke` or `fill` through CSS. By passing the
 removed:
 
 ```bash
-$ lucky gen.svg_sprite --strip-colors
+$ lucky gen.svg_sprite -- --strip-colors
 # or
-$ lucky gen.svg_sprite -c
+$ lucky gen.svg_sprite -- -c
 ```
 
 By using this flag, you will then be able to style your icons using CSS:
@@ -149,9 +149,9 @@ What if you want to take it further and strip other attributes as well? We got
 you covered:
 
 ```bash
-$ lucky gen.svg_sprite --strip=opacity,stroke-linecap,stroke-linejoin
+$ lucky gen.svg_sprite -- --strip=opacity,stroke-linecap,stroke-linejoin
 # or
-$ lucky gen.svg_sprite -s opacity,stroke-linecap,stroke-linejoin
+$ lucky gen.svg_sprite -- -s opacity,stroke-linecap,stroke-linejoin
 ```
 
 All attributes you strip away can then be declared in your stylesheet.
@@ -173,7 +173,7 @@ files: ./src/components/svg_icons/default/*.svg
 run: lucky gen.svg_sprite
 ---
 files: ./src/components/svg_icons/symbolic/*.svg
-run: lucky gen.svg_sprite symbolic --strip-colors
+run: lucky gen.svg_sprite symbolic -- --strip-colors
 ```
 
 Then, in a new terminal window, simply run:

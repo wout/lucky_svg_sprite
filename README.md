@@ -97,15 +97,11 @@ This will set up the required structure and files:
 - `src/components/svg_sprites` (where generated sprites will be stored)
 - `src/components/svg_sprites/default.cr` (sprite component with `example` icon)
 
-You can add a set name as well:
+You can choose a different set name too:
 
 ```bash
 $ bin/svg_sprite --init menu_symbolic
 ```
-
-Which will generate a directory for the given set name instead of **default**: 
-
-- `src/components/svg_icons/menu_symbolic/example.svg` (`example` icon)
 
 ### Generating sprites
 
@@ -131,6 +127,8 @@ removed:
 $ bin/svg_sprite --strip-colors
 # or
 $ bin/svg_sprite -c
+# or
+$ bin/svg_sprite menu_icons -c
 ```
 
 By using this flag, you will then be able to style your icons using CSS:

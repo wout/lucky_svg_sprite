@@ -41,10 +41,10 @@ Which you can then easily mount in your pages:
 
 ```crystal
 body do
-  mount SvgSprite::Default.new
+  mount SvgSprite::Default
   
   header do
-    mount SvgSprite::Default::LuckyLogoSymbolic.new
+    mount SvgSprite::Default::LuckyLogoSymbolic
   end
 end
 ```
@@ -193,7 +193,7 @@ In your layout file, mount the sprite at the top of the body tag:
 
 ```crystal
 body do
-  mount SvgSprite::Default.new
+  mount SvgSprite::Default
   ...
 end
 ```
@@ -210,8 +210,8 @@ multiple icon sets. For example, you might need to have **symbolic** and
 
 ```crystal
 body do
-  mount SvgSprite::Colored.new
-  mount SvgSprite::Symbolic.new
+  mount SvgSprite::Colored
+  mount SvgSprite::Symbolic
   ...
 end
 ```
@@ -236,12 +236,12 @@ Icons can be mounted wherever you like:
 
 ```crystal
 link to: Profile::Show do
-  mount SvgSprite::Default::UserProfile.new
+  mount SvgSprite::Default::UserProfile
   text "My Profile"
 end
 
 div class: "shopping-bag" do
-  mount SvgSprite::MyLovelySet::ProductsShoppingBags.new
+  mount SvgSprite::MyLovelySet::ProductsShoppingBags
 end
 ```
 
@@ -250,13 +250,13 @@ some examples:
 
 ```crystal
 # src/components/svg_icons/default/hairy-ball.svg
-mount SvgSprite::Default::HairyBall.new
+mount SvgSprite::Default::HairyBall
 
 # src/components/svg_icons/default/aircraft_chopper_4.svg
-mount SvgSprite::Default::AircraftChopper4.new
+mount SvgSprite::Default::AircraftChopper4
 
 # src/components/svg_icons/my_lovely_set/ContactUs.svg
-mount SvgSprite::MyLovelySet::ContactUs.new
+mount SvgSprite::MyLovelySet::ContactUs
 ```
 
 __📄️ Note:__ *The great thing about having dedicated Crystal classes per icon, 
@@ -265,7 +265,7 @@ deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.* 🎉️
 
 If you find yourself in a situation where you want to mount a series of icons
-using a loop (like in a menu for example), then a macro will come in handy:
+using a loop (like in a menu for example), then the following macro will give you some useful pointers:
 
 ```crystal
 ul do
@@ -273,7 +273,7 @@ ul do
     {% name = button.gsub(/-/, "_").camelcase %}
     li do
       link to: {{name.id}}::Index, flow_id: "{{button.id}}-section-button" do
-        mount SvgSprite::Menu::{{name.id}}.new
+        mount SvgSprite::Menu::{{name.id}}
         text {{name}}
       end
     end

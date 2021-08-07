@@ -140,10 +140,10 @@ to mount sprites and icons in pages. Styling icons, like <code>width</code>,
 <p>Which you can then easily mount in your pages:</p>
 
 <pre><code class="language-crystal">body <span class="k">do</span>
-  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span>.<span class="k">new</span>
+  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span>
   
   header <span class="k">do</span>
-    mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">LuckyLogoSymbolic</span>.<span class="k">new</span>
+    mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">LuckyLogoSymbolic</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
 
@@ -284,7 +284,7 @@ app.</em></p>
 <p>In your layout file, mount the sprite at the top of the body tag:</p>
 
 <pre><code class="language-crystal">body <span class="k">do</span>
-  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span>.<span class="k">new</span>
+  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span>
   ...
 <span class="k">end</span></code></pre>
 
@@ -299,8 +299,8 @@ multiple icon sets. For example, you might need to have <strong>symbolic</strong
 <strong>colored</strong> set. In that case, you will need to mount two sets:</p>
 
 <pre><code class="language-crystal">body <span class="k">do</span>
-  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Colored</span>.<span class="k">new</span>
-  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Symbolic</span>.<span class="k">new</span>
+  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Colored</span>
+  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Symbolic</span>
   ...
 <span class="k">end</span></code></pre>
 
@@ -325,25 +325,25 @@ actually need a selection of them at the same time.</p>
 <p>Icons can be mounted wherever you like:</p>
 
 <pre><code class="language-crystal">link to: <span class="t">Profile</span><span class="t">::</span><span class="t">Show</span> <span class="k">do</span>
-  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">UserProfile</span>.<span class="k">new</span>
+  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">UserProfile</span>
   text <span class="s">&quot;My Profile&quot;</span>
 <span class="k">end</span>
 
 div <span class="k">class</span>: <span class="s">&quot;shopping-bag&quot;</span> <span class="k">do</span>
-  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">MyLovelySet</span><span class="t">::</span><span class="t">ProductsShoppingBags</span>.<span class="k">new</span>
+  mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">MyLovelySet</span><span class="t">::</span><span class="t">ProductsShoppingBags</span>
 <span class="k">end</span></code></pre>
 
 <p>The name of the icon class is the classified version of its file name. Here are
 some examples:</p>
 
 <pre><code class="language-crystal"><span class="c"># src/components/svg_icons/default/hairy-ball.svg</span>
-mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">HairyBall</span>.<span class="k">new</span>
+mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">HairyBall</span>
 
 <span class="c"># src/components/svg_icons/default/aircraft_chopper_4.svg</span>
-mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">AircraftChopper4</span>.<span class="k">new</span>
+mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">AircraftChopper4</span>
 
 <span class="c"># src/components/svg_icons/my_lovely_set/ContactUs.svg</span>
-mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">MyLovelySet</span><span class="t">::</span><span class="t">ContactUs</span>.<span class="k">new</span></code></pre>
+mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">MyLovelySet</span><span class="t">::</span><span class="t">ContactUs</span></code></pre>
 
 <p><strong>📄️ Note:</strong> <em>The great thing about having dedicated Crystal classes per icon, 
 is that you'll never have a missing icon. And if an SVG icon's source file gets
@@ -351,14 +351,14 @@ deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.</em> 🎉️</p>
 
 <p>If you find yourself in a situation where you want to mount a series of icons
-using a loop (like in a menu for example), then a macro will come in handy:</p>
+using a loop (like in a menu for example), then the following macro will give you some useful pointers:</p>
 
 <pre><code class="language-crystal">ul <span class="k">do</span>
   {% <span class="k">for</span> button <span class="k">in</span> <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Menu</span><span class="t">::</span><span class="t">MANIFEST</span> %}
     {% name <span class="o">=</span> button.gsub(<span class="s">/-/</span>, <span class="s">&quot;_&quot;</span>).camelcase %}
     li <span class="k">do</span>
       link to: {{name.id}}<span class="t">::</span><span class="t">Index</span>, flow_id: <span class="s">&quot;{{button.id}}-section-button&quot;</span> <span class="k">do</span>
-        mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Menu</span><span class="t">::</span>{{name.id}}.<span class="k">new</span>
+        mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Menu</span><span class="t">::</span>{{name.id}}
         text {{name}}
       <span class="k">end</span>
     <span class="k">end</span>

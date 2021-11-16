@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="master">
 <meta name="crystal_docs.project_name" content="lucky_svg_sprite">
 
@@ -56,8 +56,18 @@
       
         <ul>
   
-  <li class=" " data-id="lucky_svg_sprite/LuckySvgSprite/Icon" data-name="luckysvgsprite::icon">
+  <li class="parent " data-id="lucky_svg_sprite/LuckySvgSprite/Icon" data-name="luckysvgsprite::icon">
       <a href="LuckySvgSprite/Icon.html">Icon</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_svg_sprite/LuckySvgSprite/Icon/Raw" data-name="luckysvgsprite::icon::raw">
+      <a href="LuckySvgSprite/Icon/Raw.html">Raw</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -98,37 +108,29 @@
 
 
 <div class="main-content">
-<h1><a id="lucky-svg-sprite-generator" class="anchor" href="#lucky-svg-sprite-generator">
-  <svg class="octicon-link" aria-hidden="true">
+<h1><a id="lucky-svg-sprite-generator" class="anchor" href="#lucky-svg-sprite-generator">  <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Lucky SVG Sprite generator</h1>
-
-<p><img src="https://raw.githubusercontent.com/wout/lucky_svg_sprite/master/logo.svg?sanitize=true" alt="Lucky SVG Sprite generator logo"/></p>
-
-<p>Generate <a href="https://luckyframework.org/">Lucky</a>-flavored SVG sprites from a 
+<p><img src="https://raw.githubusercontent.com/wout/lucky_svg_sprite/master/logo.svg?sanitize=true" alt="Lucky SVG Sprite generator logo" /></p>
+<p>Generate <a href="https://luckyframework.org/">Lucky</a>-flavored SVG sprites from a
 folder of separate SVG icons. This shard includes the necessary Lucky components
-to mount sprites and icons in pages. Styling icons, like <code>width</code>, 
+to mount sprites and icons in pages. Styling icons, like <code>width</code>,
 <code>height</code>, <code>stroke</code>, <code>fill</code> and <code>opacity</code>, can be done in CSS.</p>
-
-<p><img src="https://img.shields.io/github/license/wout/lucky_svg_sprite" alt="GitHub"/>
-<img src="https://img.shields.io/github/v/tag/wout/lucky_svg_sprite" alt="GitHub tag (latest SemVer)"/>
-<img src="https://img.shields.io/github/workflow/status/wout/lucky_svg_sprite/lucky_svg_sprite%20CI" alt="GitHub Workflow Status"/></p>
-
+<p><img src="https://img.shields.io/github/license/wout/lucky_svg_sprite" alt="GitHub" />
+<img src="https://img.shields.io/github/v/tag/wout/lucky_svg_sprite" alt="GitHub tag (latest SemVer)" />
+<img src="https://img.shields.io/github/workflow/status/wout/lucky_svg_sprite/lucky_svg_sprite%20CI" alt="GitHub Workflow Status" /></p>
 <p>Turn your regular SVG icon files:</p>
-
-<pre><code class="language-svg">&lt;!-- src/components/svg_icons/default/lucky-logo-symbolic.svg -->
-&lt;?xml version="1.0" encoding="UTF-8"?>
-&lt;svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  &lt;g fill="none" stroke="#000000">
-    &lt;path d="m12.626 ... 5.1818z" stroke-width="1"/>
-    &lt;path d="m3.9846 ... 7.1105-12.89" stroke-width="0.5"/>
-    &lt;path d="m5.9305 ... 6.1854-11.213" stroke-width="0.5"/>
-  &lt;/g>
-&lt;/svg></code></pre>
-
+<pre><code class="language-svg">&lt;!-- src/components/svg_icons/default/lucky-logo-symbolic.svg --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;g fill=&quot;none&quot; stroke=&quot;#000000&quot;&gt;
+    &lt;path d=&quot;m12.626 ... 5.1818z&quot; stroke-width=&quot;1&quot;/&gt;
+    &lt;path d=&quot;m3.9846 ... 7.1105-12.89&quot; stroke-width=&quot;0.5&quot;/&gt;
+    &lt;path d=&quot;m5.9305 ... 6.1854-11.213&quot; stroke-width=&quot;0.5&quot;/&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</code></pre>
 <p>Into reusable Lucky components:</p>
-
 <pre><code class="language-crystal">tag <span class="s">&quot;symbol&quot;</span>, id: <span class="s">&quot;svg-lucky-logo-symbolic-icon&quot;</span>, viewBox<span class="o">=</span><span class="s">&quot;0 0 16 16&quot;</span> <span class="k">do</span>
   tag <span class="s">&quot;g&quot;</span>, fill: <span class="s">&quot;none&quot;</span>, stroke: <span class="s">&quot;#000000&quot;</span> <span class="k">do</span>
     tag <span class="s">&quot;path&quot;</span>, d: <span class="s">&quot;m12.626 ... 5.1818z&quot;</span>, stroke_width: <span class="s">&quot;1&quot;</span>
@@ -136,9 +138,7 @@ to mount sprites and icons in pages. Styling icons, like <code>width</code>,
     tag <span class="s">&quot;path&quot;</span>, d: <span class="s">&quot;m5.9305 ... 6.1854-11.213&quot;</span>, stroke_width: <span class="s">&quot;0.5&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
-
 <p>Which you can then easily mount in your pages:</p>
-
 <pre><code class="language-crystal">body <span class="k">do</span>
   mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span>
   
@@ -146,184 +146,138 @@ to mount sprites and icons in pages. Styling icons, like <code>width</code>,
     mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">LuckyLogoSymbolic</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
-
 <p>With just one single command:</p>
-
 <pre><code class="language-bash">$ bin/svg_sprite</code></pre>
-
 <p>And that's all instantaneously! 🚀️</p>
-
 <h2><a id="installation" class="anchor" href="#installation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Installation</h2>
-
 <p>Add the dependency to your <code>shard.yml</code>:</p>
-
 <pre><code class="language-yaml">dependencies:
   lucky_svg_sprite:
     github: wout/lucky_svg_sprite</code></pre>
-
 <p>Run <code>shards install</code>.</p>
-
 <p><strong>📄️ Note:</strong> <em>Installation might take a while since the generator binary needs
 to be built. Having it built now, means that you'll have instantaneous sprite
 regeneration. So, don't worry, be patient and grab a ☕️.</em></p>
-
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h2>
-
 <p>First, make sure your require this library in Lucky's shards.cr file:</p>
-
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;lucky_svg_sprite&quot;</span></code></pre>
-
 <h3><a id="setup" class="anchor" href="#setup">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Setup</h3>
-
 <p>After installation, run the following command:</p>
-
 <pre><code class="language-bash">$ bin/svg_sprite --init default</code></pre>
-
 <p>This will set up the required structure and files:</p>
-
-<ul><li><code>src/components/base_svg_icon.cr</code> (for customization)</li><li><code>src/components/base_svg_sprite.cr</code> (for customization)</li><li><code>src/components/svg_icons/default/example.svg</code> (<code>example</code> icon)</li><li><code>src/components/svg_sprites</code> (where generated sprites will be stored)</li><li><code>src/components/svg_sprites/default.cr</code> (sprite component with <code>example</code> icon)</li></ul>
-
+<ul>
+<li><code>src/components/base_svg_icon.cr</code> (for customization)</li>
+<li><code>src/components/base_svg_sprite.cr</code> (for customization)</li>
+<li><code>src/components/svg_icons/default/example.svg</code> (<code>example</code> icon)</li>
+<li><code>src/components/svg_sprites</code> (where generated sprites will be stored)</li>
+<li><code>src/components/svg_sprites/default.cr</code> (sprite component with <code>example</code> icon)</li>
+</ul>
 <p>You can choose a different set name too:</p>
-
 <pre><code class="language-bash">$ bin/svg_sprite --init menu_symbolic</code></pre>
-
 <h3><a id="generating-sprites" class="anchor" href="#generating-sprites">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Generating sprites</h3>
-
 <p>To regenerate your sprite after adding new icons, run:</p>
-
 <pre><code class="language-bash">$ bin/svg_sprite</code></pre>
-
 <p>This will generate a new sprite from the <strong>default</strong> set. Add the name of the
 set you want to generate:</p>
-
 <pre><code class="language-bash">$ bin/svg_sprite menu_icons</code></pre>
-
-<p>By default, this command assumes your icons are in the desired color and you 
+<p>By default, this command assumes your icons are in the desired color and you
 don't change their <code>stroke</code> or <code>fill</code> through CSS. By passing the
-<code>--strip-colors</code> flag, all <code>stroke</code> and <code>fill</code> attributes of your icons will be 
+<code>--strip-colors</code> flag, all <code>stroke</code> and <code>fill</code> attributes of your icons will be
 removed:</p>
-
 <pre><code class="language-bash">$ bin/svg_sprite --strip-colors
 # or
 $ bin/svg_sprite -c
 # or
 $ bin/svg_sprite menu_icons -c</code></pre>
-
 <p>By using this flag, you will then be able to style your icons using CSS:</p>
-
 <pre><code class="language-css">.svg-default-icon {
   stroke: pink;
   opacity: 0.8;
   fill: none;
 }</code></pre>
-
 <p><strong>📄️ Note:</strong> <em>Obviously, this is not recommended for multicolor icons.</em></p>
-
-<p>What if you want to take it further and strip other attributes as well? We got 
+<p>What if you want to take it further and strip other attributes as well? We got
 you covered:</p>
-
 <pre><code class="language-bash">$ bin/svg_sprite --strip=opacity,stroke-linecap,stroke-linejoin
 # or
 $ bin/svg_sprite -s opacity,stroke-linecap,stroke-linejoin</code></pre>
-
 <p>All attributes you strip away can then be declared in your stylesheet.</p>
-
 <h3><a id="automatically-generating-sprites" class="anchor" href="#automatically-generating-sprites">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Automatically generating sprites 🚀️</h3>
-
 <p>If you have <a href="https://github.com/f/guardian">Guardian.cr</a> installed, create a
 <code>guardfile.yml</code> (<code>guardian --init</code>) and add the following line:</p>
-
 <pre><code class="language-yaml">files: ./src/components/svg_icons/default/*.svg
 run: bin/svg_sprite</code></pre>
-
 <p>You can do the same for all your icon sets, each with their own arguments:</p>
-
 <pre><code class="language-yml">files: ./src/components/svg_icons/default/*.svg
 run: bin/svg_sprite
 ---
 files: ./src/components/svg_icons/symbolic/*.svg
 run: bin/svg_sprite symbolic --strip-colors</code></pre>
-
 <p>Then, in a new terminal window, simply run:</p>
-
 <pre><code class="language-crystal">$ guardian</code></pre>
-
 <p>And watch your sprites be generated whenever you edit or add an icon to one of
 your sets.</p>
-
 <p><strong>📄️ Note:</strong> <em>This setup works well with Lucky's watcher, because when the new
 sprite file is generated, Lucky will pick up on that and start recompiling the
 app.</em></p>
-
 <h3><a id="mounting-a-sprite" class="anchor" href="#mounting-a-sprite">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Mounting a sprite</h3>
-
 <p>In your layout file, mount the sprite at the top of the body tag:</p>
-
 <pre><code class="language-crystal">body <span class="k">do</span>
   mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span>
   ...
 <span class="k">end</span></code></pre>
-
 <p><strong>📄️ Note:</strong> <em>Yes, it's awkward, but it should be that way due to a
 <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=349175">bug in Chrome</a>.
 If they are not at the top, or at least mounted before they are used, Chrome
 will not render the icons. There are fixes, but they are beyond the
 scope of this shard.</em></p>
-
 <p>This will mount the <strong>default</strong> icon set. Yes, that's right, you can create
-multiple icon sets. For example, you might need to have <strong>symbolic</strong> and 
+multiple icon sets. For example, you might need to have <strong>symbolic</strong> and
 <strong>colored</strong> set. In that case, you will need to mount two sets:</p>
-
 <pre><code class="language-crystal">body <span class="k">do</span>
   mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Colored</span>
   mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Symbolic</span>
   ...
 <span class="k">end</span></code></pre>
-
 <p>Evidently, icons for the respective sets should be stored in:</p>
-
 <pre><code class="language-crystal">src<span class="s">/components/</span>svg_icons<span class="s">/colored
 src/</span>components<span class="s">/svg_icons/</span>symbolic</code></pre>
-
 <p><strong>☝ Tip:</strong> If you have many icons in your app, sets can also be useful to
 create groups of icons that belong together on the same page or in the same
 component. For example, you could have a set for menu icons, a set for icons
 used on the dashboard and so on. Then you can mount those sets wherever you need
 them and avoid one large blob of icons mounted on every page where you only
 actually need a selection of them at the same time.</p>
-
 <h3><a id="mounting-an-icon" class="anchor" href="#mounting-an-icon">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Mounting an icon</h3>
-
 <p>Icons can be mounted wherever you like:</p>
-
 <pre><code class="language-crystal">link to: <span class="t">Profile</span><span class="t">::</span><span class="t">Show</span> <span class="k">do</span>
   mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">UserProfile</span>
   text <span class="s">&quot;My Profile&quot;</span>
@@ -332,10 +286,8 @@ actually need a selection of them at the same time.</p>
 div <span class="k">class</span>: <span class="s">&quot;shopping-bag&quot;</span> <span class="k">do</span>
   mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">MyLovelySet</span><span class="t">::</span><span class="t">ProductsShoppingBags</span>
 <span class="k">end</span></code></pre>
-
 <p>The name of the icon class is the classified version of its file name. Here are
 some examples:</p>
-
 <pre><code class="language-crystal"><span class="c"># src/components/svg_icons/default/hairy-ball.svg</span>
 mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Default</span><span class="t">::</span><span class="t">HairyBall</span>
 
@@ -344,15 +296,12 @@ mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">D
 
 <span class="c"># src/components/svg_icons/my_lovely_set/ContactUs.svg</span>
 mount <span class="t">SvgSprite</span><span class="t">::</span><span class="t">MyLovelySet</span><span class="t">::</span><span class="t">ContactUs</span></code></pre>
-
-<p><strong>📄️ Note:</strong> <em>The great thing about having dedicated Crystal classes per icon, 
+<p><strong>📄️ Note:</strong> <em>The great thing about having dedicated Crystal classes per icon,
 is that you'll never have a missing icon. And if an SVG icon's source file gets
 deleted or renamed, the compiler will let you know after regenerating the
 sprite. An added bonus of using Crystal.</em> 🎉️</p>
-
 <p>If you find yourself in a situation where you want to mount a series of icons
 using a loop (like in a menu for example), then the following macro will give you some useful pointers:</p>
-
 <pre><code class="language-crystal">ul <span class="k">do</span>
   {% <span class="k">for</span> button <span class="k">in</span> <span class="t">SvgSprite</span><span class="t">::</span><span class="t">Menu</span><span class="t">::</span><span class="t">MANIFEST</span> %}
     {% name <span class="o">=</span> button.gsub(<span class="s">/-/</span>, <span class="s">&quot;_&quot;</span>).camelcase %}
@@ -364,166 +313,154 @@ using a loop (like in a menu for example), then the following macro will give yo
     <span class="k">end</span>
   {% <span class="k">end</span> %}
 <span class="k">end</span></code></pre>
-
 <p><strong>📄️ Note:</strong> <em>Every sprite carries a tuple containing the names of all its
-icons; a manifest if you will. For the menu example above, it can be found in 
-<code>SvgSprite::Menu::MANIFEST</code>. The returned list contains sanitized, parameterized 
-icon file names, without their extension. So for example: 
+icons; a manifest if you will. For the menu example above, it can be found in
+<code>SvgSprite::Menu::MANIFEST</code>. The returned list contains sanitized, parameterized
+icon file names, without their extension. So for example:
 <code>{"my-account", "dashboard", "blog-posts"}</code></em></p>
-
+<p>Finally, there's also an option to render icons by their set and icon names as
+string values:</p>
+<pre><code class="language-crystal">mount <span class="t">LuckySvgSprite</span><span class="t">::</span><span class="t">Icon</span><span class="t">::</span><span class="t">Raw</span>, <span class="s">&quot;set-name&quot;</span>, <span class="s">&quot;icon-name&quot;</span></code></pre>
 <h3><a id="customizing-attributes" class="anchor" href="#customizing-attributes">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Customizing attributes</h3>
-
 <h4><a id="style" class="anchor" href="#style">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a><code>style</code></h4>
-
 <p>Generated sprites are hidden with an inline style tag:</p>
-
-<pre><code class="language-html">&lt;svg class="svg-sprite svg-default-set" style="display:none" xmlns="http://www.w3.org/2000/svg">
-  &lt;defs>
+<pre><code class="language-html">&lt;svg class=&quot;svg-sprite svg-default-set&quot; style=&quot;display:none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;defs&gt;
     ...
-  &lt;/defs>
-&lt;/svg></code></pre>
-
+  &lt;/defs&gt;
+&lt;/svg&gt;</code></pre>
 <p>If you believe style attributes have no place in HTML, then you are in luck.
 Just add a <code>style</code> method to your <code>base_svg_sprite.cr</code> component returning an
 empty string:</p>
-
 <pre><code class="language-crystal"><span class="c"># src/components/base_svg_sprite.cr</span>
 <span class="k">abstract</span> <span class="k">class</span> <span class="t">BaseSvgSprite</span> <span class="o">&lt;</span> <span class="t">LuckySvgSprite</span><span class="t">::</span><span class="t">Set</span>
   <span class="k">def</span> <span class="m">style</span>
     <span class="s">&quot;&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
-
 <p>Of course, this will mess up your layout, so you'll need to make sure to hide it
 in your stylesheet:</p>
-
 <pre><code class="language-css">.svg-sprite {
   display: none;
 }</code></pre>
-
 <h4><a id="class" class="anchor" href="#class">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a><code>class</code></h4>
-
 <p>Class names can be a very personal thing, so you might want to change them. By
 default, sprites have two class names. For example:</p>
-
-<ul><li><code>svg-sprite</code> (all sprites)</li><li><code>svg-default-set</code> (only the <strong>default</strong> set)</li></ul>
-
+<ul>
+<li><code>svg-sprite</code> (all sprites)</li>
+<li><code>svg-default-set</code> (only the <strong>default</strong> set)</li>
+</ul>
 <p>Similarly, icons also have three class names:</p>
-
-<ul><li><code>svg-icon</code> (all icons)</li><li><code>svg-default-icon</code> (all icons in the <strong>default</strong> set)</li><li><code>svg-default-example-icon</code> (the <strong>example</strong> icon in the <strong>default</strong> set)</li></ul>
-
+<ul>
+<li><code>svg-icon</code> (all icons)</li>
+<li><code>svg-default-icon</code> (all icons in the <strong>default</strong> set)</li>
+<li><code>svg-default-example-icon</code> (the <strong>example</strong> icon in the <strong>default</strong> set)</li>
+</ul>
 <p>You can change them by adding a method called <code>class_name</code>, which returns the
 class name you prefer over the default one.</p>
-
 <p><strong>For sprites:</strong></p>
-
 <pre><code class="language-crystal"><span class="c"># src/components/base_svg_sprite.cr</span>
 <span class="k">abstract</span> <span class="k">class</span> <span class="t">BaseSvgSprite</span> <span class="o">&lt;</span> <span class="t">LuckySvgSprite</span><span class="t">::</span><span class="t">Set</span>
   <span class="k">def</span> <span class="m">class_name</span>
     <span class="s">&quot;my-sprite my-</span><span class="i">#{</span>name<span class="i">}</span><span class="s">-set&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
-
 <p>Which will result in:</p>
-
-<pre><code class="language-html">&lt;svg class="my-sprite my-default-set" style="display:none" xmlns="http://www.w3.org/2000/svg">
-  &lt;defs>
+<pre><code class="language-html">&lt;svg class=&quot;my-sprite my-default-set&quot; style=&quot;display:none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;defs&gt;
     ...
-  &lt;/defs>
-&lt;/svg></code></pre>
-
+  &lt;/defs&gt;
+&lt;/svg&gt;</code></pre>
 <p><strong>For icons:</strong></p>
-
 <pre><code class="language-crystal"><span class="c"># src/components/base_svg_icon.cr</span>
 <span class="k">abstract</span> <span class="k">class</span> <span class="t">BaseSvgIcon</span> <span class="o">&lt;</span> <span class="t">LuckySvgSprite</span><span class="t">::</span><span class="t">Icon</span>
   <span class="k">def</span> <span class="m">class_name</span>
     <span class="s">&quot;</span><span class="i">#{</span>set<span class="i">}</span><span class="s">__icon </span><span class="i">#{</span>set<span class="i">}</span><span class="s">__icon--{name}&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre>
-
 <p>Which will result in:</p>
-
-<pre><code class="language-html">&lt;svg class="menu__icon menu__icon--products">
-  &lt;use xlink:href="#svg-menu-products-icon">&lt;/use>
-&lt;/svg></code></pre>
-
+<pre><code class="language-html">&lt;svg class=&quot;menu__icon menu__icon--products&quot;&gt;
+  &lt;use xlink:href=&quot;#svg-menu-products-icon&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code></pre>
 <h2><a id="useful-tools" class="anchor" href="#useful-tools">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Useful tools</h2>
-
 <h3><a id="norde" class="anchor" href="#norde">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Norde</h3>
-
 <p>Managing and searching icons manually can be a tedious job. I found
 <a href="https://norde.io/">Norde</a> to be very useful. It comes installed with a few icon
 sets, like Font Awesome and Material Design, but you can install any set you
 like. Best of all, it is available for Linux, macOS and Windows.</p>
-
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Development</h2>
-
 <p>Make sure you have <a href="https://github.com/f/guardian">Guardian.cr</a> installed. Then
 run:</p>
-
 <pre><code class="language-bash">$ guardian</code></pre>
-
 <p>This will automatically:</p>
-
-<ul><li>run ameba for src and spec files</li><li>run the relevant spec for any file in src</li><li>run spec file whenever they are saved</li><li>install shards whenever you save shard.yml</li></ul>
-
+<ul>
+<li>run ameba for src and spec files</li>
+<li>run the relevant spec for any file in src</li>
+<li>run spec file whenever they are saved</li>
+<li>install shards whenever you save shard.yml</li>
+</ul>
 <h2><a id="documentation" class="anchor" href="#documentation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Documentation</h2>
-
-<ul><li><a href="https://wout.github.io/lucky_svg_sprite">API (master)</a></li></ul>
-
+<ul>
+<li><a href="https://wout.github.io/lucky_svg_sprite">API (master)</a></li>
+</ul>
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Contributing</h2>
-
-<ol><li>Fork it (https://github.com/wout/lucky_svg_sprite/fork)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
-
+<ol>
+<li>Fork it (https://github.com/wout/lucky_svg_sprite/fork)</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
 <h2><a id="contributors" class="anchor" href="#contributors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Contributors</h2>
-
-<ul><li><a href="https://github.com/wout">wout</a> - creator and maintainer</li></ul>
-
+<ul>
+<li><a href="https://github.com/wout">wout</a> - creator and maintainer</li>
+</ul>
 <h2><a id="thanks-attributions" class="anchor" href="#thanks-attributions">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
-</a>Thanks & attributions</h2>
-
-<ul><li>The SVG to Lucky component converter is heavily based on
+</a>Thanks &amp; attributions</h2>
+<ul>
+<li>The SVG to Lucky component converter is heavily based on
 <a href="https://luckyhtml.herokuapp.com/">HTML2Lucky</a>.
-Thanks <a href="https://github.com/paulcsmith">@paulcsmith</a>! </li></ul>
+Thanks <a href="https://github.com/paulcsmith">@paulcsmith</a>!</li>
+</ul>
 </div>
 </body>
 </html>

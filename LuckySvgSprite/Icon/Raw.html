@@ -9,13 +9,13 @@
 
 
 
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../js/doc.js"></script>
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_svg_sprite">
-  <title>LuckySvgSprite::Icon - lucky_svg_sprite master</title>
+  <title>LuckySvgSprite::Icon::Raw - lucky_svg_sprite master</title>
   <script type="text/javascript">
-    CrystalDocs.base_path = "../";
+    CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
@@ -33,7 +33,7 @@
 
     <div class="project-summary">
       <h1 class="project-name">
-        <a href="../index.html">
+        <a href="../../index.html">
           lucky_svg_sprite
         </a>
       </h1>
@@ -52,17 +52,17 @@
     <ul>
   
   <li class="parent open current" data-id="lucky_svg_sprite/LuckySvgSprite" data-name="luckysvgsprite">
-      <a href="../LuckySvgSprite.html">LuckySvgSprite</a>
+      <a href="../../LuckySvgSprite.html">LuckySvgSprite</a>
       
         <ul>
   
   <li class="parent open current" data-id="lucky_svg_sprite/LuckySvgSprite/Icon" data-name="luckysvgsprite::icon">
-      <a href="../LuckySvgSprite/Icon.html">Icon</a>
+      <a href="../../LuckySvgSprite/Icon.html">Icon</a>
       
         <ul>
   
-  <li class=" " data-id="lucky_svg_sprite/LuckySvgSprite/Icon/Raw" data-name="luckysvgsprite::icon::raw">
-      <a href="../LuckySvgSprite/Icon/Raw.html">Raw</a>
+  <li class=" current" data-id="lucky_svg_sprite/LuckySvgSprite/Icon/Raw" data-name="luckysvgsprite::icon::raw">
+      <a href="../../LuckySvgSprite/Icon/Raw.html">Raw</a>
       
     </li>
   
@@ -72,17 +72,17 @@
     </li>
   
   <li class="parent " data-id="lucky_svg_sprite/LuckySvgSprite/Mixins" data-name="luckysvgsprite::mixins">
-      <a href="../LuckySvgSprite/Mixins.html">Mixins</a>
+      <a href="../../LuckySvgSprite/Mixins.html">Mixins</a>
       
         <ul>
   
   <li class=" " data-id="lucky_svg_sprite/LuckySvgSprite/Mixins/Icon" data-name="luckysvgsprite::mixins::icon">
-      <a href="../LuckySvgSprite/Mixins/Icon.html">Icon</a>
+      <a href="../../LuckySvgSprite/Mixins/Icon.html">Icon</a>
       
     </li>
   
   <li class=" " data-id="lucky_svg_sprite/LuckySvgSprite/Mixins/Set" data-name="luckysvgsprite::mixins::set">
-      <a href="../LuckySvgSprite/Mixins/Set.html">Set</a>
+      <a href="../../LuckySvgSprite/Mixins/Set.html">Set</a>
       
     </li>
   
@@ -92,7 +92,7 @@
     </li>
   
   <li class=" " data-id="lucky_svg_sprite/LuckySvgSprite/Set" data-name="luckysvgsprite::set">
-      <a href="../LuckySvgSprite/Set.html">Set</a>
+      <a href="../../LuckySvgSprite/Set.html">Set</a>
       
     </li>
   
@@ -110,12 +110,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">abstract class</span> LuckySvgSprite::Icon
+  <span class="kind">class</span> LuckySvgSprite::Icon::Raw
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckySvgSprite/Icon.html">LuckySvgSprite::Icon</a></li><li class="superclass">Lucky::BaseComponent</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckySvgSprite/Icon/Raw.html">LuckySvgSprite::Icon::Raw</a></li><li class="superclass">Lucky::BaseComponent</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -123,20 +123,6 @@
 
 
 
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../LuckySvgSprite/Mixins/Icon.html">LuckySvgSprite::Mixins::Icon</a></li>
-    
-  </ul>
 
 
 
@@ -157,7 +143,7 @@
   </h2>
   
     
-      <a href="https://github.com/wout/lucky_svg_sprite/blob/10f7e91c282a31a223295d42164e77b76f42f326/src/lucky_svg_sprite/icon.cr#L1" target="_blank">
+      <a href="https://github.com/wout/lucky_svg_sprite/blob/10f7e91c282a31a223295d42164e77b76f42f326/src/lucky_svg_sprite/icon.cr#L10" target="_blank">
         lucky_svg_sprite/icon.cr
       </a>
     
@@ -179,13 +165,30 @@
   <dl>
     
       <dt class="entry-const" id="ASSIGNS">
-        <strong>ASSIGNS</strong> = <code><span class="o">[]</span> <span class="k">of</span> <span class="t">Nil</span></code>
+        <strong>ASSIGNS</strong> = <code>[set : <span class="t">String</span>, name : <span class="t">String</span>, class_name : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span> <span class="o">=</span> <span class="n">nil</span>] <span class="k">of</span> <span class="t">Nil</span></code>
       </dt>
       
     
   </dl>
 
 
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28set%3AString%2Cname%3AString%2Cclass_name%3AString%3F%3Dnil%2C%2A%2Aunused_exposures%29-class-method" class="signature"><strong>.new</strong>(set : String, name : String, class_name : String? = <span class="n">nil</span>, **unused_exposures)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -221,7 +224,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#name%3AString-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#render-instance-method" class="signature"><strong>#render</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set%3AString-instance-method" class="signature"><strong>#set</strong> : String</a>
         
       </li>
     
@@ -232,35 +245,6 @@
 
 
 <div class="methods-inherited">
-  
-    
-
-  <h3>Instance methods inherited from module <code><a href="../LuckySvgSprite/Mixins/Icon.html">LuckySvgSprite::Mixins::Icon</a></code></h3>
-  
-  
-    <a href="../LuckySvgSprite/Mixins/Icon.html#class_name-instance-method" class="tooltip">
-      <span>class_name</span>
-    class_name</a>, 
-    
-  
-    <a href="../LuckySvgSprite/Mixins/Icon.html#name-instance-method" class="tooltip">
-      <span>name</span>
-    name</a>, 
-    
-  
-    <a href="../LuckySvgSprite/Mixins/Icon.html#set-instance-method" class="tooltip">
-      <span>set</span>
-    set</a>
-    
-  
-
-
-    
-
-
-    
-
-
   
     
 
@@ -545,6 +529,30 @@
 </div>
 
 
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(set:String,name:String,class_name:String?=nil,**unused_exposures)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(set : String, name : String, class_name : String? = <span class="n">nil</span>, **unused_exposures)
+
+        <a class="method-permalink" href="#new%28set%3AString%2Cname%3AString%2Cclass_name%3AString%3F%3Dnil%2C%2A%2Aunused_exposures%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
 
 
   <h2>
@@ -573,7 +581,7 @@ project root. e.g. src/components/my_component.cr</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/wout/lucky_svg_sprite/blob/10f7e91c282a31a223295d42164e77b76f42f326/src/lucky_svg_sprite/icon.cr#L1" target="_blank">View source</a>]
+          [<a href="https://github.com/wout/lucky_svg_sprite/blob/10f7e91c282a31a223295d42164e77b76f42f326/src/lucky_svg_sprite/icon.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -590,6 +598,20 @@ project root. e.g. src/components/my_component.cr</p>
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="render-instance-method">
       <div class="signature">
         
@@ -601,7 +623,21 @@ project root. e.g. src/components/my_component.cr</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/wout/lucky_svg_sprite/blob/10f7e91c282a31a223295d42164e77b76f42f326/src/lucky_svg_sprite/icon.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/wout/lucky_svg_sprite/blob/10f7e91c282a31a223295d42164e77b76f42f326/src/lucky_svg_sprite/icon.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set:String-instance-method">
+      <div class="signature">
+        
+        def <strong>set</strong> : String
+
+        <a class="method-permalink" href="#set%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
         
       </div>
     </div>

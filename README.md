@@ -287,6 +287,13 @@ icons; a manifest if you will. For the menu example above, it can be found in
 icon file names, without their extension. So for example: 
 `{"my-account", "dashboard", "blog-posts"}`*
 
+Finally, there's also an option to render icons by their set and icon names as
+string values:
+
+```crystal
+mount LuckySvgSprite::Icon::Raw, "set-name", "icon-name"
+```
+
 ### Customizing attributes
 
 #### `style`

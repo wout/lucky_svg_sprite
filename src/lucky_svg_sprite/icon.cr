@@ -14,12 +14,16 @@ abstract class LuckySvgSprite::Icon < Lucky::BaseComponent
 
     def render
       tag "svg", class: class_name do
-        tag "use", "xlink:href": "#svg-#{@set}-#{@name}-icon"
+        tag "use", "xlink:href": "#svg-#{@set}-#{icon_name}-icon"
       end
     end
 
     private def class_name
-      @class_name || "svg-icon svg-#{@set}-icon svg-#{@set}-#{@name}-icon"
+      @class_name || "svg-icon svg-#{@set}-icon svg-#{@set}-#{icon_name}-icon"
+    end
+
+    private def icon_name
+      @name.gsub(/_/, "-")
     end
   end
 end
